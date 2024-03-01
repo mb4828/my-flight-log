@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document id="1">
+        <Style id="5">
+            <LineStyle id="6">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="21">
+            <LineStyle id="22">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="37">
+            <LineStyle id="38">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="53">
+            <LineStyle id="54">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="69">
+            <LineStyle id="70">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="85">
+            <LineStyle id="86">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="101">
+            <LineStyle id="102">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="117">
+            <LineStyle id="118">
+                <color>ffdec4b0</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <name>My Flight Log</name>
+        <Folder id="2">
+            <Style id="9">
+                <IconStyle id="10">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="11">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="12">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="15">
+                <IconStyle id="16">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="17">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="18">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="25">
+                <IconStyle id="26">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="27">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="28">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="31">
+                <IconStyle id="32">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="33">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="34">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="41">
+                <IconStyle id="42">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="43">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="44">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="47">
+                <IconStyle id="48">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="49">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="50">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="57">
+                <IconStyle id="58">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="59">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="60">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="63">
+                <IconStyle id="64">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="65">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="66">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="73">
+                <IconStyle id="74">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="75">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="76">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="79">
+                <IconStyle id="80">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="81">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="82">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="89">
+                <IconStyle id="90">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="91">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="92">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="95">
+                <IconStyle id="96">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="97">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="98">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="105">
+                <IconStyle id="106">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="107">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="108">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="111">
+                <IconStyle id="112">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="113">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="114">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="121">
+                <IconStyle id="122">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="123">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="124">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="127">
+                <IconStyle id="128">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="129">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="130">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <name>Airports</name>
+            <Placemark id="8">
+                <name>JFK</name>
+                <styleUrl>#9</styleUrl>
+                <Point id="7">
+                    <coordinates>-73.779,40.640,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="14">
+                <name>LHR</name>
+                <styleUrl>#15</styleUrl>
+                <Point id="13">
+                    <coordinates>-0.461,51.477,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="24">
+                <name>CDG</name>
+                <styleUrl>#25</styleUrl>
+                <Point id="23">
+                    <coordinates>2.550,49.013,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="30">
+                <name>BCN</name>
+                <styleUrl>#31</styleUrl>
+                <Point id="29">
+                    <coordinates>2.078,41.297,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="40">
+                <name>BCN</name>
+                <styleUrl>#41</styleUrl>
+                <Point id="39">
+                    <coordinates>2.078,41.297,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="46">
+                <name>JFK</name>
+                <styleUrl>#47</styleUrl>
+                <Point id="45">
+                    <coordinates>-73.779,40.640,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="56">
+                <name>EWR</name>
+                <styleUrl>#57</styleUrl>
+                <Point id="55">
+                    <coordinates>-74.169,40.692,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="62">
+                <name>LAX</name>
+                <styleUrl>#63</styleUrl>
+                <Point id="61">
+                    <coordinates>-118.408,33.942,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="72">
+                <name>LAX</name>
+                <styleUrl>#73</styleUrl>
+                <Point id="71">
+                    <coordinates>-118.408,33.942,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="78">
+                <name>KOA</name>
+                <styleUrl>#79</styleUrl>
+                <Point id="77">
+                    <coordinates>-156.046,19.739,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="88">
+                <name>KOA</name>
+                <styleUrl>#89</styleUrl>
+                <Point id="87">
+                    <coordinates>-156.046,19.739,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="94">
+                <name>LAX</name>
+                <styleUrl>#95</styleUrl>
+                <Point id="93">
+                    <coordinates>-118.408,33.942,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="104">
+                <name>LAX</name>
+                <styleUrl>#105</styleUrl>
+                <Point id="103">
+                    <coordinates>-118.408,33.942,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="110">
+                <name>EWR</name>
+                <styleUrl>#111</styleUrl>
+                <Point id="109">
+                    <coordinates>-74.169,40.692,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="120">
+                <name>LGA</name>
+                <styleUrl>#121</styleUrl>
+                <Point id="119">
+                    <coordinates>-73.872,40.777,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="126">
+                <name>CVG</name>
+                <styleUrl>#127</styleUrl>
+                <Point id="125">
+                    <coordinates>-84.662,39.046,0.0</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+        <Placemark id="4">
+            <name>JFK ‣ LHR [2015-05-31]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_DL_15_15_s.png&quot;&gt;
+            &lt;b&gt;DL403&lt;/b&gt; - 2015-05-31&lt;br&gt;
+            NEW YORK to LONDON
+            &lt;hr&gt;
+            🛫 JOHN F KENNEDY INTERNATIONAL - 10:54PM&lt;br&gt;
+            🛬 HEATHROW - 11:53AM&lt;br&gt;
+            ⏱️ 7h59m&lt;br&gt;
+            🌎 3443mi&lt;br&gt;
+            ✈️ N1607B (B763)
+        </description>
+            <styleUrl>#5</styleUrl>
+            <LineString id="3">
+                <coordinates>-73.779,40.640,0.0 -0.461,51.477,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="20">
+            <name>CDG ‣ BCN [2015-06-13]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_AF_15_15_s.png&quot;&gt;
+            &lt;b&gt;AF1548&lt;/b&gt; - 2015-06-13&lt;br&gt;
+            PARIS to BARCELONA
+            &lt;hr&gt;
+            🛫 CHARLES DE GAULLE - 3:43PM&lt;br&gt;
+            🛬 BARCELONA - 5:22PM&lt;br&gt;
+            ⏱️ 1h39m&lt;br&gt;
+            🌎 533mi&lt;br&gt;
+            ✈️ N (A320)
+        </description>
+            <styleUrl>#21</styleUrl>
+            <LineString id="19">
+                <coordinates>2.550,49.013,0.0 2.078,41.297,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="36">
+            <name>BCN ‣ JFK [2015-06-17]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_DL_15_15_s.png&quot;&gt;
+            &lt;b&gt;DL477&lt;/b&gt; - 2015-06-17&lt;br&gt;
+            BARCELONA to NEW YORK
+            &lt;hr&gt;
+            🛫 BARCELONA - 10:41AM&lt;br&gt;
+            🛬 JOHN F KENNEDY INTERNATIONAL - 12:52PM&lt;br&gt;
+            ⏱️ 8h11m&lt;br&gt;
+            🌎 3822mi&lt;br&gt;
+            ✈️ N819NW (A333)
+        </description>
+            <styleUrl>#37</styleUrl>
+            <LineString id="35">
+                <coordinates>2.078,41.297,0.0 -73.779,40.640,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="52">
+            <name>EWR ‣ LAX [2016-12-22]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1773&lt;/b&gt; - 2016-12-22&lt;br&gt;
+            NEWARK to LOS ANGELES
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 10:33AM&lt;br&gt;
+            🛬 LOS ANGELES INTERNATIONAL - 2:05PM&lt;br&gt;
+            ⏱️ 6h32m&lt;br&gt;
+            🌎 2448mi&lt;br&gt;
+            ✈️ N14106 (B752)
+        </description>
+            <styleUrl>#53</styleUrl>
+            <LineString id="51">
+                <coordinates>-74.169,40.692,0.0 -118.408,33.942,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="68">
+            <name>LAX ‣ KOA [2016-12-22]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1718&lt;/b&gt; - 2016-12-22&lt;br&gt;
+            LOS ANGELES to KONA
+            &lt;hr&gt;
+            🛫 LOS ANGELES INTERNATIONAL - 5:34PM&lt;br&gt;
+            🛬 KONA INTERNATIONAL AT KEAHOLE - 9:08PM&lt;br&gt;
+            ⏱️ 5h34m&lt;br&gt;
+            🌎 2501mi&lt;br&gt;
+            ✈️ N37462 (B739)
+        </description>
+            <styleUrl>#69</styleUrl>
+            <LineString id="67">
+                <coordinates>-118.408,33.942,0.0 -156.046,19.739,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="84">
+            <name>KOA ‣ LAX [2017-01-01]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1147&lt;/b&gt; - 2017-01-01&lt;br&gt;
+            KONA to LOS ANGELES
+            &lt;hr&gt;
+            🛫 KONA INTERNATIONAL AT KEAHOLE - 10:32PM&lt;br&gt;
+            🛬 LOS ANGELES INTERNATIONAL - 5:15AM&lt;br&gt;
+            ⏱️ 4h43m&lt;br&gt;
+            🌎 2501mi&lt;br&gt;
+            ✈️ N77530 (B738)
+        </description>
+            <styleUrl>#85</styleUrl>
+            <LineString id="83">
+                <coordinates>-156.046,19.739,0.0 -118.408,33.942,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="100">
+            <name>LAX ‣ EWR [2017-01-01]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1640&lt;/b&gt; - 2017-01-01&lt;br&gt;
+            LOS ANGELES to NEWARK
+            &lt;hr&gt;
+            🛫 LOS ANGELES INTERNATIONAL - 7:37AM&lt;br&gt;
+            🛬 NEWARK LIBERTY INTERNATIONAL - 3:35PM&lt;br&gt;
+            ⏱️ 4h58m&lt;br&gt;
+            🌎 2448mi&lt;br&gt;
+            ✈️ N14118 (B752)
+        </description>
+            <styleUrl>#101</styleUrl>
+            <LineString id="99">
+                <coordinates>-118.408,33.942,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="116">
+            <name>LGA ‣ CVG [2017-03-13]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_AA_15_15_s.png&quot;&gt;
+            &lt;b&gt;AA3776&lt;/b&gt; - 2017-03-13&lt;br&gt;
+            NEW YORK to CINCINNATI
+            &lt;hr&gt;
+            🛫 LA GUARDIA - 6:45PM&lt;br&gt;
+            🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 9:34PM&lt;br&gt;
+            ⏱️ 2h49m&lt;br&gt;
+            🌎 583m&lt;br&gt;
+            ✈️ N626AE (E145)
+        </description>
+            <styleUrl>#117</styleUrl>
+            <LineString id="115">
+                <coordinates>-73.872,40.777,0.0 -84.662,39.046,0.0</coordinates>
+            </LineString>
+        </Placemark>
+    </Document>
+</kml>
