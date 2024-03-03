@@ -57,6 +57,7 @@ def build_kml(airports, flights):
         for airport in [orig, dest]:
             if airport['IATA'] not in found_airports:
                 build_kml_airport_helper(airport_folder, airport)
+                found_airports.append(airport['IATA'])
     return kml
 
 
