@@ -50,7 +50,7 @@ def build_kml(airports, flights):
             🌎 {flight['DISTANCE']}<br>
             ✈️ {flight['TAIL']} ({flight['TYPE']})
         '''
-        ls.style.linestyle.color = simplekml.Color.lightsteelblue
+        ls.style.linestyle.color = '7FF5A195'  # aabbggrr
         ls.style.linestyle.width = 4
 
         # add airport (if not already present)
