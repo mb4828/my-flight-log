@@ -519,6 +519,20 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="421">
+            <LineStyle id="422">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="425">
+            <LineStyle id="426">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -2273,6 +2287,42 @@
             <styleUrl>#417</styleUrl>
             <LineString id="415">
                 <coordinates>-77.456,38.944,0.0 -73.872,40.777,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="420">
+            <name>JFK ‣ LHR [2024-10-04]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_DL_15_15_s.png&quot;&gt;
+            &lt;b&gt;DL1&lt;/b&gt; - 2024-10-04&lt;br&gt;
+            NEW YORK to LONDON
+            &lt;hr&gt;
+            🛫 JOHN F KENNEDY INTERNATIONAL - 7:42PM&lt;br&gt;
+            🛬 HEATHROW - 7:51AM&lt;br&gt;
+            ⏱️ 7h9m&lt;br&gt;
+            🌎 3443mi&lt;br&gt;
+            ✈️ N829MH (B764)
+        </description>
+            <styleUrl>#421</styleUrl>
+            <LineString id="419">
+                <coordinates>-73.779,40.640,0.0 -0.461,51.477,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="424">
+            <name>CDG ‣ JFK [2024-10-09]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_AF_15_15_s.png&quot;&gt;
+            &lt;b&gt;AF8&lt;/b&gt; - 2024-10-09&lt;br&gt;
+            PARIS to NEW YORK
+            &lt;hr&gt;
+            🛫 CHARLES DE GAULLE - 5:39PM&lt;br&gt;
+            🛬 JOHN F KENNEDY INTERNATIONAL - 7:42PM&lt;br&gt;
+            ⏱️ 8h3m&lt;br&gt;
+            🌎 3626mi&lt;br&gt;
+            ✈️ F-GSQJ (B773)
+        </description>
+            <styleUrl>#425</styleUrl>
+            <LineString id="423">
+                <coordinates>2.550,49.013,0.0 -73.779,40.640,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
