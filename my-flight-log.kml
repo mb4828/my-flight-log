@@ -533,6 +533,20 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="429">
+            <LineStyle id="430">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="439">
+            <LineStyle id="440">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -815,6 +829,20 @@
                     <scale>0</scale>
                 </LabelStyle>
             </Style>
+            <Style id="433">
+                <IconStyle id="434">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="435">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="436">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
             <name>Airports</name>
             <Placemark id="8">
                 <name>JFK</name>
@@ -954,6 +982,13 @@
                 <styleUrl>#411</styleUrl>
                 <Point id="409">
                     <coordinates>-77.456,38.944,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="432">
+                <name>PHX</name>
+                <styleUrl>#433</styleUrl>
+                <Point id="431">
+                    <coordinates>-112.008,33.434,0.0</coordinates>
                 </Point>
             </Placemark>
         </Folder>
@@ -2323,6 +2358,42 @@
             <styleUrl>#425</styleUrl>
             <LineString id="423">
                 <coordinates>2.550,49.013,0.0 -73.779,40.640,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="428">
+            <name>EWR ‣ PHX [2024-12-19]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1796&lt;/b&gt; - 2024-12-19&lt;br&gt;
+            NEWARK to PHOENIX
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 7:41AM&lt;br&gt;
+            🛬 PHOENIX SKY HARBOR INTERNATIONAL - 11:10AM&lt;br&gt;
+            ⏱️ 5h29m&lt;br&gt;
+            🌎 2127mi&lt;br&gt;
+            ✈️ N14115 (B752)
+        </description>
+            <styleUrl>#429</styleUrl>
+            <LineString id="427">
+                <coordinates>-74.169,40.692,0.0 -112.008,33.434,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="438">
+            <name>PHX ‣ EWR [2024-12-29]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1797&lt;/b&gt; - 2024-12-29&lt;br&gt;
+            PHOENIX to NEWARK
+            &lt;hr&gt;
+            🛫 PHOENIX SKY HARBOR INTERNATIONAL - 12:36AM&lt;br&gt;
+            🛬 NEWARK LIBERTY INTERNATIONAL - 7:18AM&lt;br&gt;
+            ⏱️ 4h42m&lt;br&gt;
+            🌎 2127mi&lt;br&gt;
+            ✈️ N77430 (B739)
+        </description>
+            <styleUrl>#439</styleUrl>
+            <LineString id="437">
+                <coordinates>-112.008,33.434,0.0 -74.169,40.692,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
