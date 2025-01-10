@@ -86,7 +86,7 @@ function App() {
           header: true,
           skipEmptyLines: true,
           complete: (results: any) => {
-            const data: any[] = results.data.map((d) => {
+            const data: any[] = results.data.map((d: any) => {
               d['AIRLINE_FLIGHT'] = `${d['AIRLINE']}${d['FLIGHT']}`;
               return d;
             });
