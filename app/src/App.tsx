@@ -3,17 +3,20 @@ import { useEffect, useState } from 'react';
 import L from 'leaflet';
 import * as Luxon from 'luxon';
 import Papa from 'papaparse';
+import CountUp from 'react-countup';
+import { v4 as uuid } from 'uuid';
 import 'leaflet-kml';
 import 'leaflet.geodesic';
 import 'leaflet/dist/leaflet.css';
 import './App.scss';
-import CountUp from 'react-countup';
 
 function App() {
   const [stats, setStats] = useState({} as any);
   const [data, setData] = useState([] as any[]);
   const [filteredData, setFilteredData] = useState([] as any[]);
   const [filterText, setFilterText] = useState('');
+  const [sortIdx, setSortIdx] = useState(2);
+  const [sortDir, setSortDir] = useState('d');
   let flightMap: L.Map;
 
   function initMap() {
@@ -55,9 +58,9 @@ function App() {
             } else if (layer instanceof L.Polyline) {
               const latlngs = layer.getLatLngs();
               const geodesicLayer = L.geodesic(latlngs as L.LatLngExpression[], {
-                color: '#6d6875',
-                weight: 3,
-                opacity: 0.5,
+                color: '#0000FF',
+                weight: 2,
+                opacity: 0.8,
               });
               flightMap.removeLayer(layer);
               flightMap.addLayer(geodesicLayer);
@@ -143,6 +146,14 @@ function App() {
     }
   }
 
+  function onTableSort(colIdx: number, colKey: string) {
+    const dir = sortDir === 'a' ? 'd' : 'a';
+    const sortedData = filteredData.sort((a, b) => (a[colKey] < b[colKey] ? -1 : 1));
+    setSortIdx(colIdx);
+    setSortDir(dir);
+    setFilteredData(dir === 'a' ? sortedData : sortedData.reverse());
+  }
+
   useEffect(() => {
     initMap();
     initStats();
@@ -219,8 +230,8 @@ function App() {
             <dd>
               <ul>
                 {stats['airports']?.slice(0, 5).map((airport: any) => (
-                  <li key={airport.id}>
-                    📍 {airport[0]} <span className="sparkline">{'❙'.repeat(airport[1])}</span> {airport[1]}
+                  <li key={uuid()}>
+                    📍 {airport[0]} <span className="sparkline">{'❚'.repeat(airport[1])}</span> {airport[1]}
                   </li>
                 ))}
               </ul>
@@ -231,9 +242,9 @@ function App() {
             <dd>
               <ul>
                 {stats['airlines']?.slice(0, 5).map((airline: any) => (
-                  <li key={airline.id}>
+                  <li key={uuid()}>
                     <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]}{' '}
-                    <span className="sparkline">{'❙'.repeat(airline[1])}</span> {airline[1]}
+                    <span className="sparkline">{'❚'.repeat(airline[1])}</span> {airline[1]}
                   </li>
                 ))}
               </ul>
@@ -244,8 +255,8 @@ function App() {
             <dd>
               <ul>
                 {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
-                  <li key={aircraft.id}>
-                    ✈️ {aircraft[0]} <span className="sparkline">{'❙'.repeat(aircraft[1])}</span> {aircraft[1]}
+                  <li key={uuid()}>
+                    ✈️ {aircraft[0]} <span className="sparkline">{'❚'.repeat(aircraft[1])}</span> {aircraft[1]}
                   </li>
                 ))}
               </ul>
@@ -259,20 +270,32 @@ function App() {
       <table id="flight-log">
         <thead>
           <tr>
-            <th>Flight</th>
-            <th>From ‣ To</th>
-            <th>Date ▾</th>
-            <th>Depart</th>
-            <th>Arrive</th>
-            <th>Duration</th>
-            <th>Delay</th>
-            <th>Aircraft</th>
-            <th>Type</th>
+            <th onClick={() => onTableSort(0, 'AIRLINE')}>
+              Flight {sortIdx === 0 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(1, 'ORIGIN')}>
+              From ‣ To {sortIdx === 1 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(2, 'DATE')}>Date {sortIdx === 2 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
+            <th onClick={() => onTableSort(3, 'DEPART')}>
+              Depart {sortIdx === 3 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(4, 'ARRIVE')}>
+              Arrive {sortIdx === 4 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(5, 'TIME')}>
+              Duration {sortIdx === 5 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(6, 'DELAY')}>Delay {sortIdx === 6 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
+            <th onClick={() => onTableSort(7, 'TAIL')}>
+              Aircraft {sortIdx === 7 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(8, 'TYPE')}>Type {sortIdx === 8 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
           </tr>
         </thead>
         <tbody>
           {filteredData.map((flight) => (
-            <tr key={flight.id}>
+            <tr key={uuid()}>
               <td>
                 <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" />
                 {flight.AIRLINE}
