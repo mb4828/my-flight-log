@@ -60,12 +60,17 @@ h1 {
   outline: none !important;
 }
 
+#flight-log-wrapper {
+  height: max(40vh, 500px);
+  overflow-y: hidden;
+}
+
 #flight-log {
   width: 100%;
 
   th {
     position: sticky;
-    top: 0;
+    top: -1px;
     background: #fff;
     text-transform: uppercase;
     font-weight: normal;
@@ -89,13 +94,41 @@ h1 {
   }
 }
 
-.table-wrapper {
-  height: max(40vh, 500px);
-  overflow-y: scroll;
-}
-
 .sparkline {
   color: #ddd;
   letter-spacing: -1px;
   margin: 0 4px;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 180%;
+  }
+
+  #flight-map {
+    height: 300px;
+  }
+
+  .stats {
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 24px;
+  }
+
+  .countup {
+    padding-bottom: 0;
+  }
+
+  .item {
+    min-width: 42%;
+  }
+
+  #flight-log-wrapper {
+    height: calc(100vh - 46px);
+  }
+
+  #flight-log {
+    width: 800px;
+  }
 }

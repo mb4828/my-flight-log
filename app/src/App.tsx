@@ -146,11 +146,24 @@ function App() {
   useEffect(() => {
     initMap();
     initStats();
+
+    // table should not be scrollable until at the bottom of screen
+    const tableWrapper = document.getElementById('flight-log-wrapper');
+    window.addEventListener('scroll', () => {
+      const scrolledToBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight;
+      if (tableWrapper) {
+        if (scrolledToBottom) {
+          tableWrapper.style.overflowY = 'auto';
+        } else {
+          tableWrapper.style.overflowY = 'hidden';
+        }
+      }
+    });
   }, []);
 
   return (
     <>
-      <h1>My Flight Logbook</h1>
+      <h1>🌐 My Flight Logbook</h1>
       <div id="flight-map"></div>
 
       <div id="data-overlay">
@@ -243,7 +256,7 @@ function App() {
 
       <input id="filter" type="text" placeholder="⌕ Filter" value={filterText} onChange={onFilterChange} />
 
-      <div className="table-wrapper">
+      <div id="flight-log-wrapper">
         <table id="flight-log">
           <thead>
             <tr>
