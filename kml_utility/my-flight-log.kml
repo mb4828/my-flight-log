@@ -526,15 +526,15 @@
                 <width>4</width>
             </LineStyle>
         </Style>
-        <Style id="425">
-            <LineStyle id="426">
+        <Style id="431">
+            <LineStyle id="432">
                 <color>7FF5A195</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
             </LineStyle>
         </Style>
-        <Style id="429">
-            <LineStyle id="430">
+        <Style id="435">
+            <LineStyle id="436">
                 <color>7FF5A195</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
@@ -542,6 +542,27 @@
         </Style>
         <Style id="439">
             <LineStyle id="440">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="443">
+            <LineStyle id="444">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="453">
+            <LineStyle id="454">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="457">
+            <LineStyle id="458">
                 <color>7FF5A195</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
@@ -829,16 +850,30 @@
                     <scale>0</scale>
                 </LabelStyle>
             </Style>
-            <Style id="433">
-                <IconStyle id="434">
+            <Style id="425">
+                <IconStyle id="426">
                     <colorMode>normal</colorMode>
                     <scale>0.5</scale>
                     <heading>0</heading>
-                    <Icon id="435">
+                    <Icon id="427">
                         <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
                     </Icon>
                 </IconStyle>
-                <LabelStyle id="436">
+                <LabelStyle id="428">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="447">
+                <IconStyle id="448">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="449">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="450">
                     <colorMode>normal</colorMode>
                     <scale>0</scale>
                 </LabelStyle>
@@ -984,10 +1019,17 @@
                     <coordinates>-77.456,38.944,0.0</coordinates>
                 </Point>
             </Placemark>
-            <Placemark id="432">
+            <Placemark id="424">
+                <name>BOS</name>
+                <styleUrl>#425</styleUrl>
+                <Point id="423">
+                    <coordinates>-71.005,42.364,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="446">
                 <name>PHX</name>
-                <styleUrl>#433</styleUrl>
-                <Point id="431">
+                <styleUrl>#447</styleUrl>
+                <Point id="445">
                     <coordinates>-112.008,33.434,0.0</coordinates>
                 </Point>
             </Placemark>
@@ -1001,8 +1043,8 @@
             &lt;hr&gt;
             🛫 JOHN F KENNEDY INTERNATIONAL - 10:54PM&lt;br&gt;
             🛬 HEATHROW - 11:53AM&lt;br&gt;
-            ⏱️ 7h59m&lt;br&gt;
-            🌎 3443mi&lt;br&gt;
+            ⏱️ 7H59M&lt;br&gt;
+            🌎 3443MI&lt;br&gt;
             ✈️ N1607B (B763)
         </description>
             <styleUrl>#5</styleUrl>
@@ -1019,8 +1061,8 @@
             &lt;hr&gt;
             🛫 CHARLES DE GAULLE - 3:43PM&lt;br&gt;
             🛬 BARCELONA - 5:22PM&lt;br&gt;
-            ⏱️ 1h39m&lt;br&gt;
-            🌎 533mi&lt;br&gt;
+            ⏱️ 1H39M&lt;br&gt;
+            🌎 533MI&lt;br&gt;
             ✈️  (A320)
         </description>
             <styleUrl>#21</styleUrl>
@@ -1037,8 +1079,8 @@
             &lt;hr&gt;
             🛫 BARCELONA - 10:41AM&lt;br&gt;
             🛬 JOHN F KENNEDY INTERNATIONAL - 12:52PM&lt;br&gt;
-            ⏱️ 8h11m&lt;br&gt;
-            🌎 3822mi&lt;br&gt;
+            ⏱️ 8H11M&lt;br&gt;
+            🌎 3822MI&lt;br&gt;
             ✈️ N819NW (A333)
         </description>
             <styleUrl>#37</styleUrl>
@@ -1055,8 +1097,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 10:33AM&lt;br&gt;
             🛬 LOS ANGELES INTERNATIONAL - 2:05PM&lt;br&gt;
-            ⏱️ 6h32m&lt;br&gt;
-            🌎 2448mi&lt;br&gt;
+            ⏱️ 6H32M&lt;br&gt;
+            🌎 2448MI&lt;br&gt;
             ✈️ N14106 (B752)
         </description>
             <styleUrl>#41</styleUrl>
@@ -1073,8 +1115,8 @@
             &lt;hr&gt;
             🛫 LOS ANGELES INTERNATIONAL - 5:34PM&lt;br&gt;
             🛬 KONA INTERNATIONAL AT KEAHOLE - 9:08PM&lt;br&gt;
-            ⏱️ 5h34m&lt;br&gt;
-            🌎 2501mi&lt;br&gt;
+            ⏱️ 5H34M&lt;br&gt;
+            🌎 2501MI&lt;br&gt;
             ✈️ N37462 (B739)
         </description>
             <styleUrl>#57</styleUrl>
@@ -1091,8 +1133,8 @@
             &lt;hr&gt;
             🛫 KONA INTERNATIONAL AT KEAHOLE - 10:32PM&lt;br&gt;
             🛬 LOS ANGELES INTERNATIONAL - 5:15AM&lt;br&gt;
-            ⏱️ 4h43m&lt;br&gt;
-            🌎 2501mi&lt;br&gt;
+            ⏱️ 4H43M&lt;br&gt;
+            🌎 2501MI&lt;br&gt;
             ✈️ N77530 (B738)
         </description>
             <styleUrl>#67</styleUrl>
@@ -1109,8 +1151,8 @@
             &lt;hr&gt;
             🛫 LOS ANGELES INTERNATIONAL - 7:37AM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 3:35PM&lt;br&gt;
-            ⏱️ 4h58m&lt;br&gt;
-            🌎 2448mi&lt;br&gt;
+            ⏱️ 4H58M&lt;br&gt;
+            🌎 2448MI&lt;br&gt;
             ✈️ N14118 (B752)
         </description>
             <styleUrl>#71</styleUrl>
@@ -1127,8 +1169,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 6:45PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 9:34PM&lt;br&gt;
-            ⏱️ 2h49m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H49M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N626AE (E145)
         </description>
             <styleUrl>#75</styleUrl>
@@ -1145,8 +1187,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 5:01PM&lt;br&gt;
             🛬 LA GUARDIA - 7:08PM&lt;br&gt;
-            ⏱️ 2h07m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H07M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N692AE (E145)
         </description>
             <styleUrl>#91</styleUrl>
@@ -1163,8 +1205,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 6:49PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 9:33PM&lt;br&gt;
-            ⏱️ 2h44m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H44M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N668HH (E145)
         </description>
             <styleUrl>#95</styleUrl>
@@ -1181,8 +1223,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 5:59PM&lt;br&gt;
             🛬 LA GUARDIA - 8:03PM&lt;br&gt;
-            ⏱️ 2h04m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H04M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N686AE (E145)
         </description>
             <styleUrl>#99</styleUrl>
@@ -1199,8 +1241,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 7:05PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 9:39PM&lt;br&gt;
-            ⏱️ 2h34m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H34M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N671AE (E145)
         </description>
             <styleUrl>#103</styleUrl>
@@ -1217,8 +1259,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 7:51PM&lt;br&gt;
             🛬 LA GUARDIA - 10:14PM&lt;br&gt;
-            ⏱️ 2h23m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H23M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N924LL (E145)
         </description>
             <styleUrl>#107</styleUrl>
@@ -1235,8 +1277,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 7:57PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 10:00PM&lt;br&gt;
-            ⏱️ 2h03m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H03M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N665MS (E145)
         </description>
             <styleUrl>#111</styleUrl>
@@ -1253,8 +1295,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 6:27PM&lt;br&gt;
             🛬 LA GUARDIA - 8:36PM&lt;br&gt;
-            ⏱️ 2h09m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H09M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N663AR (E145)
         </description>
             <styleUrl>#115</styleUrl>
@@ -1271,8 +1313,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 7:41PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 10:32PM&lt;br&gt;
-            ⏱️ 2h51m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H51M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N696AE (E145)
         </description>
             <styleUrl>#119</styleUrl>
@@ -1289,8 +1331,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 6:26PM&lt;br&gt;
             🛬 LA GUARDIA - 8:25PM&lt;br&gt;
-            ⏱️ 1h59m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 1H59M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N651AE (E145)
         </description>
             <styleUrl>#123</styleUrl>
@@ -1307,8 +1349,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 2:14PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 4:14PM&lt;br&gt;
-            ⏱️ 2h00m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H00M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N643AE (E145)
         </description>
             <styleUrl>#127</styleUrl>
@@ -1325,8 +1367,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 5:46PM&lt;br&gt;
             🛬 LA GUARDIA - 7:58PM&lt;br&gt;
-            ⏱️ 2h12m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H12M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N647AE (E145)
         </description>
             <styleUrl>#131</styleUrl>
@@ -1343,8 +1385,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 8:15PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 10:39PM&lt;br&gt;
-            ⏱️ 2h24m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H24M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N906AE (E145)
         </description>
             <styleUrl>#135</styleUrl>
@@ -1361,8 +1403,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 6:25PM&lt;br&gt;
             🛬 LA GUARDIA - 8:17PM&lt;br&gt;
-            ⏱️ 1h52m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 1H52M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N651AE (E145)
         </description>
             <styleUrl>#139</styleUrl>
@@ -1379,8 +1421,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 6:41PM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 9:16PM&lt;br&gt;
-            ⏱️ 2h35m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 2H35M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N646AE (E145)
         </description>
             <styleUrl>#143</styleUrl>
@@ -1397,8 +1439,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 6:47PM&lt;br&gt;
             🛬 LA GUARDIA - 8:32PM&lt;br&gt;
-            ⏱️ 1h45m&lt;br&gt;
-            🌎 583mi&lt;br&gt;
+            ⏱️ 1H45M&lt;br&gt;
+            🌎 583MI&lt;br&gt;
             ✈️ N656AE (E145)
         </description>
             <styleUrl>#147</styleUrl>
@@ -1415,8 +1457,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 8:06AM&lt;br&gt;
             🛬 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 10:05AM&lt;br&gt;
-            ⏱️ 1h59m&lt;br&gt;
-            🌎 567mi&lt;br&gt;
+            ⏱️ 1H59M&lt;br&gt;
+            🌎 567MI&lt;br&gt;
             ✈️ N726YX (E75W)
         </description>
             <styleUrl>#151</styleUrl>
@@ -1433,8 +1475,8 @@
             &lt;hr&gt;
             🛫 CINCINNATI NORTHERN KENTUCKY INTERNATIONAL - 12:17PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 2:16PM&lt;br&gt;
-            ⏱️ 1h59m&lt;br&gt;
-            🌎 567mi&lt;br&gt;
+            ⏱️ 1H59M&lt;br&gt;
+            🌎 567MI&lt;br&gt;
             ✈️ N648RW (E170)
         </description>
             <styleUrl>#155</styleUrl>
@@ -1451,8 +1493,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 9:40AM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 12:43PM&lt;br&gt;
-            ⏱️ 3h03m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 3H03M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N75426 (B739)
         </description>
             <styleUrl>#159</styleUrl>
@@ -1469,8 +1511,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 7:35PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 10:27PM&lt;br&gt;
-            ⏱️ 2h52m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H52M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N26232 (B738)
         </description>
             <styleUrl>#169</styleUrl>
@@ -1487,8 +1529,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 4:53PM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 8:01PM&lt;br&gt;
-            ⏱️ 3h08m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 3H08M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N448UA (A320)
         </description>
             <styleUrl>#173</styleUrl>
@@ -1505,8 +1547,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 6:58PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 9:38PM&lt;br&gt;
-            ⏱️ 2h40m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H40M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N743YX (E75W)
         </description>
             <styleUrl>#177</styleUrl>
@@ -1523,8 +1565,8 @@
             &lt;hr&gt;
             🛫 JOHN F KENNEDY INTERNATIONAL - 9:02PM&lt;br&gt;
             🛬 VENEZIA TESSERA - 11:16AM&lt;br&gt;
-            ⏱️ 8h14m&lt;br&gt;
-            🌎 4143mi&lt;br&gt;
+            ⏱️ 8H14M&lt;br&gt;
+            🌎 4143MI&lt;br&gt;
             ✈️ N843MH (B764)
         </description>
             <styleUrl>#181</styleUrl>
@@ -1541,8 +1583,8 @@
             &lt;hr&gt;
             🛫 PERETOLA - 11:43AM&lt;br&gt;
             🛬 SCHIPHOL - 1:35PM&lt;br&gt;
-            ⏱️ 1h52m&lt;br&gt;
-            🌎 658mi&lt;br&gt;
+            ⏱️ 1H52M&lt;br&gt;
+            🌎 658MI&lt;br&gt;
             ✈️ PH-EZH (E190)
         </description>
             <styleUrl>#191</styleUrl>
@@ -1559,8 +1601,8 @@
             &lt;hr&gt;
             🛫 SCHIPHOL - 2:31PM&lt;br&gt;
             🛬 JOHN F KENNEDY INTERNATIONAL - 4:08PM&lt;br&gt;
-            ⏱️ 7h37m&lt;br&gt;
-            🌎 3635mi&lt;br&gt;
+            ⏱️ 7H37M&lt;br&gt;
+            🌎 3634MI&lt;br&gt;
             ✈️ PH-BHD (B789)
         </description>
             <styleUrl>#207</styleUrl>
@@ -1577,8 +1619,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 9:29AM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 1:20PM&lt;br&gt;
-            ⏱️ 3h51m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 3H51M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N403UA (A320)
         </description>
             <styleUrl>#211</styleUrl>
@@ -1595,8 +1637,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 2:38PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 5:21PM&lt;br&gt;
-            ⏱️ 2h43m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H43M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N406UA (A320)
         </description>
             <styleUrl>#215</styleUrl>
@@ -1613,8 +1655,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 4:50PM&lt;br&gt;
             🛬 ORLANDO INTERNATIONAL - 7:26PM&lt;br&gt;
-            ⏱️ 2h36m&lt;br&gt;
-            🌎 951mi&lt;br&gt;
+            ⏱️ 2H36M&lt;br&gt;
+            🌎 951MI&lt;br&gt;
             ✈️ N598JB (A320)
         </description>
             <styleUrl>#219</styleUrl>
@@ -1631,8 +1673,8 @@
             &lt;hr&gt;
             🛫 ORLANDO INTERNATIONAL - 12:10PM&lt;br&gt;
             🛬 LA GUARDIA - 2:30PM&lt;br&gt;
-            ⏱️ 2h20m&lt;br&gt;
-            🌎 951mi&lt;br&gt;
+            ⏱️ 2H20M&lt;br&gt;
+            🌎 951MI&lt;br&gt;
             ✈️ N535JB (A320)
         </description>
             <styleUrl>#229</styleUrl>
@@ -1649,8 +1691,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 8:38PM&lt;br&gt;
             🛬 EDINBURGH - 8:43AM&lt;br&gt;
-            ⏱️ 7h5m&lt;br&gt;
-            🌎 3260mi&lt;br&gt;
+            ⏱️ 7H5M&lt;br&gt;
+            🌎 3260MI&lt;br&gt;
             ✈️ N14107 (B752)
         </description>
             <styleUrl>#233</styleUrl>
@@ -1667,8 +1709,8 @@
             &lt;hr&gt;
             🛫 EDINBURGH - 9:21AM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 11:52AM&lt;br&gt;
-            ⏱️ 7h31m&lt;br&gt;
-            🌎 3260mi&lt;br&gt;
+            ⏱️ 7H31M&lt;br&gt;
+            🌎 3260MI&lt;br&gt;
             ✈️ N17122 (B752)
         </description>
             <styleUrl>#243</styleUrl>
@@ -1685,8 +1727,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 8:53AM&lt;br&gt;
             🛬 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 11:01AM&lt;br&gt;
-            ⏱️ 2h08m&lt;br&gt;
-            🌎 745mi&lt;br&gt;
+            ⏱️ 2H08M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
             ✈️ N967AT (B712)
         </description>
             <styleUrl>#247</styleUrl>
@@ -1703,8 +1745,8 @@
             &lt;hr&gt;
             🛫 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 7:24PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 9:39PM&lt;br&gt;
-            ⏱️ 2h14m&lt;br&gt;
-            🌎 745mi&lt;br&gt;
+            ⏱️ 2H14M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
             ✈️  ()
         </description>
             <styleUrl>#257</styleUrl>
@@ -1721,8 +1763,8 @@
             &lt;hr&gt;
             🛫 JOHN F KENNEDY INTERNATIONAL - 10:47PM&lt;br&gt;
             🛬 HEATHROW - 10:23AM&lt;br&gt;
-            ⏱️ 6h36m&lt;br&gt;
-            🌎 3443mi&lt;br&gt;
+            ⏱️ 6H36M&lt;br&gt;
+            🌎 3443MI&lt;br&gt;
             ✈️ G-CIVM (B744)
         </description>
             <styleUrl>#261</styleUrl>
@@ -1739,8 +1781,8 @@
             &lt;hr&gt;
             🛫 HEATHROW - 1:41PM&lt;br&gt;
             🛬 JOHN F KENNEDY INTERNATIONAL - 4:18PM&lt;br&gt;
-            ⏱️ 7h37m&lt;br&gt;
-            🌎 3443mi&lt;br&gt;
+            ⏱️ 7H37M&lt;br&gt;
+            🌎 3443MI&lt;br&gt;
             ✈️ G-CIVE (B744)
         </description>
             <styleUrl>#265</styleUrl>
@@ -1757,8 +1799,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 11:44AM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 2:34PM&lt;br&gt;
-            ⏱️ 2h50m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H50M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N434UA (A320)
         </description>
             <styleUrl>#269</styleUrl>
@@ -1775,8 +1817,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 4:24PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 7:37PM&lt;br&gt;
-            ⏱️ 3h13m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 3H13M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N409UA (A320)
         </description>
             <styleUrl>#273</styleUrl>
@@ -1793,8 +1835,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 2:29PM&lt;br&gt;
             🛬 ORLANDO INTERNATIONAL - 5:25PM&lt;br&gt;
-            ⏱️ 2h56m&lt;br&gt;
-            🌎 938mi&lt;br&gt;
+            ⏱️ 2H56M&lt;br&gt;
+            🌎 938MI&lt;br&gt;
             ✈️ N33132 (B752)
         </description>
             <styleUrl>#277</styleUrl>
@@ -1811,8 +1853,8 @@
             &lt;hr&gt;
             🛫 ORLANDO INTERNATIONAL - 4:07PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 6:45PM&lt;br&gt;
-            ⏱️ 2h42m&lt;br&gt;
-            🌎 938mi&lt;br&gt;
+            ⏱️ 2H42M&lt;br&gt;
+            🌎 938MI&lt;br&gt;
             ✈️ N38424 (B739)
         </description>
             <styleUrl>#281</styleUrl>
@@ -1829,8 +1871,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 2:35PM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 5:27PM&lt;br&gt;
-            ⏱️ 2h52m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H52M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N37466 (B739)
         </description>
             <styleUrl>#285</styleUrl>
@@ -1847,8 +1889,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 12:57PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 3:52PM&lt;br&gt;
-            ⏱️ 2h55m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H55M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N68842 (B739)
         </description>
             <styleUrl>#289</styleUrl>
@@ -1865,8 +1907,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 4:07PM&lt;br&gt;
             🛬 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 6:16PM&lt;br&gt;
-            ⏱️ 2h09m&lt;br&gt;
-            🌎 761mi&lt;br&gt;
+            ⏱️ 2H09M&lt;br&gt;
+            🌎 761MI&lt;br&gt;
             ✈️ N381DZ (A321)
         </description>
             <styleUrl>#293</styleUrl>
@@ -1883,8 +1925,8 @@
             &lt;hr&gt;
             🛫 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 8:02PM&lt;br&gt;
             🛬 MEMPHIS INTERNATIONAL - 8:14PM&lt;br&gt;
-            ⏱️ 1h12m&lt;br&gt;
-            🌎 331mi&lt;br&gt;
+            ⏱️ 1H12M&lt;br&gt;
+            🌎 331MI&lt;br&gt;
             ✈️ N110DX (A321)
         </description>
             <styleUrl>#297</styleUrl>
@@ -1901,8 +1943,8 @@
             &lt;hr&gt;
             🛫 MEMPHIS INTERNATIONAL - 1:41PM&lt;br&gt;
             🛬 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 4:09PM&lt;br&gt;
-            ⏱️ 1h28m&lt;br&gt;
-            🌎 331mi&lt;br&gt;
+            ⏱️ 1H28M&lt;br&gt;
+            🌎 331MI&lt;br&gt;
             ✈️ N659DL (B752)
         </description>
             <styleUrl>#307</styleUrl>
@@ -1919,8 +1961,8 @@
             &lt;hr&gt;
             🛫 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 6:14PM&lt;br&gt;
             🛬 LA GUARDIA - 8:12PM&lt;br&gt;
-            ⏱️ 1h58m&lt;br&gt;
-            🌎 761mi&lt;br&gt;
+            ⏱️ 1H58M&lt;br&gt;
+            🌎 761MI&lt;br&gt;
             ✈️ N107DN (A321)
         </description>
             <styleUrl>#311</styleUrl>
@@ -1937,8 +1979,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 9:31AM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 12:45PM&lt;br&gt;
-            ⏱️ 3h14m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 3H14M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N17264 (B38M)
         </description>
             <styleUrl>#315</styleUrl>
@@ -1955,8 +1997,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 6:13PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 8:46PM&lt;br&gt;
-            ⏱️ 2h33m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H33M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N27258 (B38M)
         </description>
             <styleUrl>#319</styleUrl>
@@ -1973,8 +2015,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 8:19PM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 10:49PM&lt;br&gt;
-            ⏱️ 2h30m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H30M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N466UA (A320)
         </description>
             <styleUrl>#323</styleUrl>
@@ -1991,8 +2033,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 5:27PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 8:13PM&lt;br&gt;
-            ⏱️ 2h46m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H46M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N841UA (A319)
         </description>
             <styleUrl>#327</styleUrl>
@@ -2009,8 +2051,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 5:55AM&lt;br&gt;
             🛬 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 7:54AM&lt;br&gt;
-            ⏱️ 1h59m&lt;br&gt;
-            🌎 745mi&lt;br&gt;
+            ⏱️ 1H59M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
             ✈️ N17244 (B738)
         </description>
             <styleUrl>#331</styleUrl>
@@ -2027,8 +2069,8 @@
             &lt;hr&gt;
             🛫 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 6:31PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 9:35PM&lt;br&gt;
-            ⏱️ 3h04m&lt;br&gt;
-            🌎 745mi&lt;br&gt;
+            ⏱️ 3H04M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
             ✈️ N18243 (B738)
         </description>
             <styleUrl>#335</styleUrl>
@@ -2045,8 +2087,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 6:28PM&lt;br&gt;
             🛬 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 8:50PM&lt;br&gt;
-            ⏱️ 2h22m&lt;br&gt;
-            🌎 745mi&lt;br&gt;
+            ⏱️ 2H22M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
             ✈️ N24729 (B737)
         </description>
             <styleUrl>#339</styleUrl>
@@ -2063,8 +2105,8 @@
             &lt;hr&gt;
             🛫 THE WILLIAM B HARTSFIELD ATLANTA INTERNATIONAL - 7:48PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 10:01PM&lt;br&gt;
-            ⏱️ 2h13m&lt;br&gt;
-            🌎 745mi&lt;br&gt;
+            ⏱️ 2H13M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
             ✈️ N827UA (A319)
         </description>
             <styleUrl>#343</styleUrl>
@@ -2081,8 +2123,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 12:18PM&lt;br&gt;
             🛬 MEMPHIS INTERNATIONAL - 1:55PM&lt;br&gt;
-            ⏱️ 2h37m&lt;br&gt;
-            🌎 944mi&lt;br&gt;
+            ⏱️ 2H37M&lt;br&gt;
+            🌎 944MI&lt;br&gt;
             ✈️ N853UA (A310)
         </description>
             <styleUrl>#347</styleUrl>
@@ -2099,8 +2141,8 @@
             &lt;hr&gt;
             🛫 MEMPHIS INTERNATIONAL - 3:25PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 7:28PM&lt;br&gt;
-            ⏱️ 3h03m&lt;br&gt;
-            🌎 944mi&lt;br&gt;
+            ⏱️ 3H03M&lt;br&gt;
+            🌎 944MI&lt;br&gt;
             ✈️ N847UA (A319)
         </description>
             <styleUrl>#351</styleUrl>
@@ -2117,8 +2159,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 7:00AM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 9:54AM&lt;br&gt;
-            ⏱️ 2h54m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H54M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N27269 (B38M)
         </description>
             <styleUrl>#355</styleUrl>
@@ -2135,8 +2177,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 7:03PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 10:03PM&lt;br&gt;
-            ⏱️ 3h00m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 3H00M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N76504 (B738)
         </description>
             <styleUrl>#359</styleUrl>
@@ -2153,8 +2195,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 10:50AM&lt;br&gt;
             🛬 ORLANDO INTERNATIONAL - 1:16PM&lt;br&gt;
-            ⏱️ 2h26m&lt;br&gt;
-            🌎 938mi&lt;br&gt;
+            ⏱️ 2H26M&lt;br&gt;
+            🌎 938MI&lt;br&gt;
             ✈️ N35236 (B738)
         </description>
             <styleUrl>#363</styleUrl>
@@ -2171,8 +2213,8 @@
             &lt;hr&gt;
             🛫 MIAMI INTERNATIONAL - 1:13PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 4:06PM&lt;br&gt;
-            ⏱️ 2h53m&lt;br&gt;
-            🌎 1087mi&lt;br&gt;
+            ⏱️ 2H53M&lt;br&gt;
+            🌎 1087MI&lt;br&gt;
             ✈️ N17279 (B38M)
         </description>
             <styleUrl>#367</styleUrl>
@@ -2189,8 +2231,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 3:47PM&lt;br&gt;
             🛬 GEORGE BUSH INTCNTL HOUSTON - 6:49PM&lt;br&gt;
-            ⏱️ 4h02m&lt;br&gt;
-            🌎 1398mi&lt;br&gt;
+            ⏱️ 4H02M&lt;br&gt;
+            🌎 1398MI&lt;br&gt;
             ✈️ N644UA (B763)
         </description>
             <styleUrl>#377</styleUrl>
@@ -2207,8 +2249,8 @@
             &lt;hr&gt;
             🛫 GEORGE BUSH INTCNTL HOUSTON - 12:28PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 11:58PM&lt;br&gt;
-            ⏱️ 10h30m&lt;br&gt;
-            🌎 1398mi&lt;br&gt;
+            ⏱️ 10H30M&lt;br&gt;
+            🌎 1398MI&lt;br&gt;
             ✈️ N649UA (B763)
         </description>
             <styleUrl>#387</styleUrl>
@@ -2225,8 +2267,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 5:35PM&lt;br&gt;
             🛬 MEMPHIS INTERNATIONAL - 7:19PM&lt;br&gt;
-            ⏱️ 2h44m&lt;br&gt;
-            🌎 961mi&lt;br&gt;
+            ⏱️ 2H44M&lt;br&gt;
+            🌎 961MI&lt;br&gt;
             ✈️ N910XJ (CRJ9)
         </description>
             <styleUrl>#391</styleUrl>
@@ -2243,8 +2285,8 @@
             &lt;hr&gt;
             🛫 MEMPHIS INTERNATIONAL - 12:14PM&lt;br&gt;
             🛬 LA GUARDIA - 3:37PM&lt;br&gt;
-            ⏱️ 2h23m&lt;br&gt;
-            🌎 961mi&lt;br&gt;
+            ⏱️ 2H23M&lt;br&gt;
+            🌎 961MI&lt;br&gt;
             ✈️ N244SY (E75W)
         </description>
             <styleUrl>#395</styleUrl>
@@ -2261,8 +2303,8 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 4:43PM&lt;br&gt;
             🛬 PALM BEACH INTERNATIONAL - 7:32PM&lt;br&gt;
-            ⏱️ 2h49m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H49M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N68452 (B739)
         </description>
             <styleUrl>#399</styleUrl>
@@ -2279,8 +2321,8 @@
             &lt;hr&gt;
             🛫 PALM BEACH INTERNATIONAL - 9:49PM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 12:29AM&lt;br&gt;
-            ⏱️ 2h40m&lt;br&gt;
-            🌎 1025mi&lt;br&gt;
+            ⏱️ 2H40M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
             ✈️ N37471 (B739)
         </description>
             <styleUrl>#403</styleUrl>
@@ -2297,8 +2339,8 @@
             &lt;hr&gt;
             🛫 LA GUARDIA - 7:44PM&lt;br&gt;
             🛬 WASHINGTON DULLES INTERNATIONAL - 9:05PM&lt;br&gt;
-            ⏱️ 1h21m&lt;br&gt;
-            🌎 227mi&lt;br&gt;
+            ⏱️ 1H21M&lt;br&gt;
+            🌎 227MI&lt;br&gt;
             ✈️ N736YX (E75W)
         </description>
             <styleUrl>#407</styleUrl>
@@ -2315,8 +2357,8 @@
             &lt;hr&gt;
             🛫 WASHINGTON DULLES INTERNATIONAL - 5:28PM&lt;br&gt;
             🛬 LA GUARDIA - 7:45PM&lt;br&gt;
-            ⏱️ 2h17m&lt;br&gt;
-            🌎 227mi&lt;br&gt;
+            ⏱️ 2H17M&lt;br&gt;
+            🌎 227MI&lt;br&gt;
             ✈️ N739YX (E75W)
         </description>
             <styleUrl>#417</styleUrl>
@@ -2325,6 +2367,42 @@
             </LineString>
         </Placemark>
         <Placemark id="420">
+            <name>LGA ‣ BOS [2024-03-17]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_B6_15_15_s.png&quot;&gt;
+            &lt;b&gt;B62432&lt;/b&gt; - 2024-03-17&lt;br&gt;
+            NEW YORK to BOSTON
+            &lt;hr&gt;
+            🛫 LA GUARDIA - 9:06AM&lt;br&gt;
+            🛬 GENERAL EDWARD LAWRENCE LOGAN INTERNATIONAL - 10:07AM&lt;br&gt;
+            ⏱️ 1H1M&lt;br&gt;
+            🌎 184MI&lt;br&gt;
+            ✈️ N334JB (E190)
+        </description>
+            <styleUrl>#421</styleUrl>
+            <LineString id="419">
+                <coordinates>-73.872,40.777,0.0 -71.005,42.364,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="430">
+            <name>BOS ‣ LGA [2024-03-21]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_B6_15_15_s.png&quot;&gt;
+            &lt;b&gt;B61231&lt;/b&gt; - 2024-03-21&lt;br&gt;
+            BOSTON to NEW YORK
+            &lt;hr&gt;
+            🛫 GENERAL EDWARD LAWRENCE LOGAN INTERNATIONAL - 5:03PM&lt;br&gt;
+            🛬 LA GUARDIA - 6:38PM&lt;br&gt;
+            ⏱️ 1H35M&lt;br&gt;
+            🌎 184MI&lt;br&gt;
+            ✈️ N228JB (E190)
+        </description>
+            <styleUrl>#431</styleUrl>
+            <LineString id="429">
+                <coordinates>-71.005,42.364,0.0 -73.872,40.777,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="434">
             <name>JFK ‣ LHR [2024-10-04]</name>
             <description>
             &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_DL_15_15_s.png&quot;&gt;
@@ -2333,16 +2411,16 @@
             &lt;hr&gt;
             🛫 JOHN F KENNEDY INTERNATIONAL - 7:42PM&lt;br&gt;
             🛬 HEATHROW - 7:51AM&lt;br&gt;
-            ⏱️ 7h9m&lt;br&gt;
-            🌎 3443mi&lt;br&gt;
+            ⏱️ 7H9M&lt;br&gt;
+            🌎 3443MI&lt;br&gt;
             ✈️ N829MH (B764)
         </description>
-            <styleUrl>#421</styleUrl>
-            <LineString id="419">
+            <styleUrl>#435</styleUrl>
+            <LineString id="433">
                 <coordinates>-73.779,40.640,0.0 -0.461,51.477,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="424">
+        <Placemark id="438">
             <name>CDG ‣ JFK [2024-10-09]</name>
             <description>
             &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_AF_15_15_s.png&quot;&gt;
@@ -2351,16 +2429,16 @@
             &lt;hr&gt;
             🛫 CHARLES DE GAULLE - 5:39PM&lt;br&gt;
             🛬 JOHN F KENNEDY INTERNATIONAL - 7:42PM&lt;br&gt;
-            ⏱️ 8h3m&lt;br&gt;
-            🌎 3626mi&lt;br&gt;
+            ⏱️ 8H3M&lt;br&gt;
+            🌎 3626MI&lt;br&gt;
             ✈️ F-GSQJ (B773)
         </description>
-            <styleUrl>#425</styleUrl>
-            <LineString id="423">
+            <styleUrl>#439</styleUrl>
+            <LineString id="437">
                 <coordinates>2.550,49.013,0.0 -73.779,40.640,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="428">
+        <Placemark id="442">
             <name>EWR ‣ PHX [2024-12-19]</name>
             <description>
             &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
@@ -2369,16 +2447,16 @@
             &lt;hr&gt;
             🛫 NEWARK LIBERTY INTERNATIONAL - 7:41AM&lt;br&gt;
             🛬 PHOENIX SKY HARBOR INTERNATIONAL - 11:10AM&lt;br&gt;
-            ⏱️ 5h29m&lt;br&gt;
-            🌎 2127mi&lt;br&gt;
+            ⏱️ 5H29M&lt;br&gt;
+            🌎 2127MI&lt;br&gt;
             ✈️ N14115 (B752)
         </description>
-            <styleUrl>#429</styleUrl>
-            <LineString id="427">
+            <styleUrl>#443</styleUrl>
+            <LineString id="441">
                 <coordinates>-74.169,40.692,0.0 -112.008,33.434,0.0</coordinates>
             </LineString>
         </Placemark>
-        <Placemark id="438">
+        <Placemark id="452">
             <name>PHX ‣ EWR [2024-12-29]</name>
             <description>
             &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
@@ -2387,13 +2465,31 @@
             &lt;hr&gt;
             🛫 PHOENIX SKY HARBOR INTERNATIONAL - 12:36AM&lt;br&gt;
             🛬 NEWARK LIBERTY INTERNATIONAL - 7:18AM&lt;br&gt;
-            ⏱️ 4h42m&lt;br&gt;
-            🌎 2127mi&lt;br&gt;
+            ⏱️ 4H42M&lt;br&gt;
+            🌎 2127MI&lt;br&gt;
             ✈️ N77430 (B739)
         </description>
-            <styleUrl>#439</styleUrl>
-            <LineString id="437">
+            <styleUrl>#453</styleUrl>
+            <LineString id="451">
                 <coordinates>-112.008,33.434,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="456">
+            <name>EWR ‣ PBI [2025-01-08]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA716&lt;/b&gt; - 2025-01-08&lt;br&gt;
+            NEWARK to WEST PALM BEACH
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 8:49PM&lt;br&gt;
+            🛬 PALM BEACH INTERNATIONAL - 11:39PM&lt;br&gt;
+            ⏱️ 2H50M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
+            ✈️ N68801 (B739)
+        </description>
+            <styleUrl>#457</styleUrl>
+            <LineString id="455">
+                <coordinates>-74.169,40.692,0.0 -80.096,26.683,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>

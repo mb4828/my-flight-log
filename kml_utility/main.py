@@ -62,10 +62,11 @@ def build_kml(airports, flights):
 
 
 def main():
-    airports = read_csv('resources/GlobalAirportDatabase.txt', ':')
-    flights = read_csv('resources/MyFlightLog.csv')
+    airports = read_csv('GlobalAirportDatabase.txt', ':')
+    flights = read_csv('MyFlightLog.csv')
     kml = build_kml(airports, flights)
     kml.save('my-flight-log.kml')
+    print('Done')
 
 
 if __name__ == '__main__':
