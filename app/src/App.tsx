@@ -146,19 +146,6 @@ function App() {
   useEffect(() => {
     initMap();
     initStats();
-
-    // table should not be scrollable until at the bottom of screen
-    const tableWrapper = document.getElementById('flight-log-wrapper');
-    window.addEventListener('scroll', () => {
-      const scrolledToBottom = window.scrollY + window.innerHeight + 5 >= document.documentElement.scrollHeight;
-      if (tableWrapper) {
-        if (scrolledToBottom) {
-          tableWrapper.style.overflowY = 'auto';
-        } else {
-          tableWrapper.style.overflowY = 'hidden';
-        }
-      }
-    });
   }, []);
 
   return (
@@ -256,52 +243,46 @@ function App() {
 
       <input id="filter" type="text" placeholder="⌕ Filter" value={filterText} onChange={onFilterChange} />
 
-      <div id="flight-log-wrapper">
-        <table id="flight-log">
-          <thead>
-            <tr>
-              <th>Flight</th>
-              <th>From ‣ To</th>
-              <th>Date ▾</th>
-              <th>Depart</th>
-              <th>Arrive</th>
-              <th>Duration</th>
-              <th>Delay</th>
-              <th>Aircraft</th>
-              <th>Type</th>
+      <table id="flight-log">
+        <thead>
+          <tr>
+            <th>Flight</th>
+            <th>From ‣ To</th>
+            <th>Date ▾</th>
+            <th>Depart</th>
+            <th>Arrive</th>
+            <th>Duration</th>
+            <th>Delay</th>
+            <th>Aircraft</th>
+            <th>Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.map((flight) => (
+            <tr key={flight.id}>
+              <td>
+                <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" />
+                {flight.AIRLINE}
+                {flight.FLIGHT}
+              </td>
+              <td>
+                {flight.ORIGIN} ‣ {flight.DESTINATION}
+              </td>
+              <td>{flight.DATE}</td>
+              <td>{flight.DEPART}</td>
+              <td>{flight.ARRIVE}</td>
+              <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.TIME) }} />
+              <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.DELAY, true) }} />
+              <td>
+                <a href={`https://www.flightradar24.com/data/aircraft/${flight.TAIL}`} target="_blank" rel="noreferrer">
+                  {flight.TAIL}
+                </a>
+              </td>
+              <td>{flight.TYPE}</td>
             </tr>
-          </thead>
-          <tbody>
-            {filteredData.map((flight) => (
-              <tr key={flight.id}>
-                <td>
-                  <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" />
-                  {flight.AIRLINE}
-                  {flight.FLIGHT}
-                </td>
-                <td>
-                  {flight.ORIGIN} ‣ {flight.DESTINATION}
-                </td>
-                <td>{flight.DATE}</td>
-                <td>{flight.DEPART}</td>
-                <td>{flight.ARRIVE}</td>
-                <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.TIME) }} />
-                <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.DELAY, true) }} />
-                <td>
-                  <a
-                    href={`https://www.flightradar24.com/data/aircraft/${flight.TAIL}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {flight.TAIL}
-                  </a>
-                </td>
-                <td>{flight.TYPE}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
