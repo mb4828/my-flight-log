@@ -86,7 +86,10 @@ function App() {
           header: true,
           skipEmptyLines: true,
           complete: (results: any) => {
-            const data: any[] = results.data;
+            const data: any[] = results.data.map((d) => {
+              d['AIRLINE_FLIGHT'] = `${d['AIRLINE']}${d['FLIGHT']}`;
+              return d;
+            });
             const stats = {
               numFlights: data.length,
               distance: data.map((d) => parseInt(d.DISTANCE) || 0).reduce((a, c) => a + c, 0),
@@ -270,7 +273,7 @@ function App() {
       <table id="flight-log">
         <thead>
           <tr>
-            <th onClick={() => onTableSort(0, 'AIRLINE')}>
+            <th onClick={() => onTableSort(0, 'AIRLINE_FLIGHT')}>
               Flight {sortIdx === 0 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
             <th onClick={() => onTableSort(1, 'ORIGIN')}>
@@ -298,8 +301,7 @@ function App() {
             <tr key={uuid()}>
               <td>
                 <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" />
-                {flight.AIRLINE}
-                {flight.FLIGHT}
+                {flight.AIRLINE_FLIGHT}
               </td>
               <td>
                 {flight.ORIGIN} ‣ {flight.DESTINATION}
