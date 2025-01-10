@@ -146,6 +146,17 @@ function App() {
   useEffect(() => {
     initMap();
     initStats();
+
+    // enable horizontal scrolling only when at bottom
+    window.addEventListener('scroll', () => {
+      const filterRect = document.getElementById('filter')?.getBoundingClientRect();
+      if (filterRect && filterRect.y === 0) {
+        document.body.style.overflowX = 'auto';
+      } else {
+        document.body.style.overflowX = 'hidden';
+        window.scrollTo(0, window.scrollY);
+      }
+    });
   }, []);
 
   return (

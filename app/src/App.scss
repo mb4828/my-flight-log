@@ -53,6 +53,7 @@ h1 {
   position: sticky;
   top: 0;
   width: calc(100% - 16px);
+  min-width: 800px;
   height: 30px;
   padding: 8px 0 8px 16px;
   border: 0;
@@ -65,10 +66,11 @@ h1 {
 
 #flight-log {
   width: 100%;
+  min-width: 800px;
 
   th {
     position: sticky;
-    top: 42px;
+    top: 46px;
     background: #fff;
     text-transform: uppercase;
     font-weight: normal;
@@ -120,14 +122,5 @@ h1 {
 
   .item {
     min-width: 42%;
-  }
-
-  #flight-log-wrapper {
-    width: 100vw;
-    overflow-x: scroll;
-  }
-
-  #flight-log {
-    width: 800px;
   }
 }
