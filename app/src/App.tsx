@@ -152,7 +152,7 @@ function App() {
       const filterRect = document.getElementById('filter')?.getBoundingClientRect();
       if (filterRect && filterRect.y === 0) {
         document.body.style.overflowX = 'auto';
-      } else if (filterRect && filterRect.y > 0 && filterRect.y < 10) {
+      } else if (filterRect && filterRect.y > 0 && filterRect.y < 100) {
         document.body.style.overflowX = 'hidden';
         window.scrollTo(0, window.scrollY);
       }
