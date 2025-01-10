@@ -150,7 +150,7 @@ function App() {
     // table should not be scrollable until at the bottom of screen
     const tableWrapper = document.getElementById('flight-log-wrapper');
     window.addEventListener('scroll', () => {
-      const scrolledToBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight;
+      const scrolledToBottom = window.scrollY + window.innerHeight + 5 >= document.documentElement.scrollHeight;
       if (tableWrapper) {
         if (scrolledToBottom) {
           tableWrapper.style.overflowY = 'auto';
