@@ -87,7 +87,12 @@ function App() {
           skipEmptyLines: true,
           complete: (results: any) => {
             const data: any[] = results.data.map((d: any) => {
-              d['AIRLINE_FLIGHT'] = `${d['AIRLINE']}${d['FLIGHT']}`;
+              d.AIRLINE_FLIGHT = `${d.AIRLINE}${d.FLIGHT}`;
+              d.ORIGIN_DEST = `${d.ORIGIN} ‣ ${d.DESTINATION}`;
+              d.DEPART_MILLIS = Luxon.DateTime.fromFormat(d.DEPART, 'h:mma').toMillis();
+              d.ARRIVE_MILLIS = Luxon.DateTime.fromFormat(d.ARRIVE, 'h:mma').toMillis();
+              d.TIME_MILLIS = Luxon.Duration.fromISO(`PT${d.TIME}`).as('milliseconds');
+              d.DELAY_MILLIS = Luxon.Duration.fromISO(`PT${d.DELAY}`).as('milliseconds');
               return d;
             });
             const stats = {
@@ -276,20 +281,22 @@ function App() {
             <th onClick={() => onTableSort(0, 'AIRLINE_FLIGHT')}>
               Flight {sortIdx === 0 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(1, 'ORIGIN')}>
+            <th onClick={() => onTableSort(1, 'ORIGIN_DEST')}>
               From ‣ To {sortIdx === 1 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
             <th onClick={() => onTableSort(2, 'DATE')}>Date {sortIdx === 2 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
-            <th onClick={() => onTableSort(3, 'DEPART')}>
+            <th onClick={() => onTableSort(3, 'DEPART_MILLIS')}>
               Depart {sortIdx === 3 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(4, 'ARRIVE')}>
+            <th onClick={() => onTableSort(4, 'ARRIVE_MILLIS')}>
               Arrive {sortIdx === 4 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(5, 'TIME')}>
+            <th onClick={() => onTableSort(5, 'TIME_MILLIS')}>
               Duration {sortIdx === 5 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(6, 'DELAY')}>Delay {sortIdx === 6 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
+            <th onClick={() => onTableSort(6, 'DELAY_MILLIS')}>
+              Delay {sortIdx === 6 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
             <th onClick={() => onTableSort(7, 'TAIL')}>
               Aircraft {sortIdx === 7 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
@@ -303,9 +310,7 @@ function App() {
                 <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" />
                 {flight.AIRLINE_FLIGHT}
               </td>
-              <td>
-                {flight.ORIGIN} ‣ {flight.DESTINATION}
-              </td>
+              <td>{flight.ORIGIN_DEST}</td>
               <td>{flight.DATE}</td>
               <td>{flight.DEPART}</td>
               <td>{flight.ARRIVE}</td>
