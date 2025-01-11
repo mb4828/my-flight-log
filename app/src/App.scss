@@ -13,8 +13,8 @@ h1 {
   position: relative;
   top: -40px;
   z-index: 9999;
-  background: #fff;
-  box-shadow: 5px 5px 15px #aaa;
+  background: var(--body-background-color);
+  box-shadow: 5px 5px 15px var(--box-shadow-color);
 }
 
 .stats {
@@ -57,8 +57,9 @@ h1 {
   height: 30px;
   padding: 8px 0 8px 16px;
   border: 0;
-  background-color: #eee;
   z-index: 99;
+  background-color: var(--accent-background-color);
+  color: var(--font-color);
 }
 #filter:focus {
   outline: none !important;
@@ -71,7 +72,7 @@ h1 {
   th {
     position: sticky;
     top: 46px;
-    background: #fff;
+    background: var(--body-background-color);
     text-transform: uppercase;
     font-weight: normal;
     font-size: 75%;
@@ -83,7 +84,7 @@ h1 {
   td {
     height: 30px;
     padding: 8px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--table-border-color);
   }
 
   img {
@@ -95,7 +96,7 @@ h1 {
 }
 
 .sparkline {
-  color: #ddd;
+  color: var(--sparkline-color);
   letter-spacing: -3px;
   margin: 0 4px;
 }

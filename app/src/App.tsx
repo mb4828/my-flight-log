@@ -197,8 +197,7 @@ function App() {
           <div className="item">
             <dt>Distance</dt>
             <dd>
-              <CountUp end={stats['distance']} />
-              mi
+              <CountUp end={stats['distance']} /> mi
             </dd>
           </div>
 
@@ -307,8 +306,7 @@ function App() {
           {filteredData.map((flight) => (
             <tr key={uuid()}>
               <td>
-                <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" />
-                {flight.AIRLINE_FLIGHT}
+                <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" /> {flight.AIRLINE_FLIGHT}
               </td>
               <td>{flight.ORIGIN_DEST}</td>
               <td>{flight.DATE}</td>
