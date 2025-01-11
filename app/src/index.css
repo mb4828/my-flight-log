@@ -8,7 +8,7 @@
     --accent-background-color: #eee;
     --box-shadow-color: #ccc;
     --table-border-color: #ccc;
-    --sparkline-color: #ddd;
+    --bar-chart-color: #ddd;
   }
 
 /* dark mode */
@@ -19,7 +19,7 @@
     --accent-background-color: #181818;
     --box-shadow-color: #111;
     --table-border-color: #000;
-    --sparkline-color: #444;
+    --bar-chart-color: #444;
   }
 }
 

@@ -45,8 +45,11 @@ h1 {
     top: 2px;
   }
 }
-.countup dd {
+.stats.countup dd {
   font-size: 175%;
+}
+.stats.bars .item {
+  min-width: 33%;
 }
 
 #filter {
@@ -95,12 +98,6 @@ h1 {
   }
 }
 
-.sparkline {
-  color: var(--sparkline-color);
-  letter-spacing: -3px;
-  margin: 0 4px;
-}
-
 /* Mobile styles */
 @media screen and (max-width: 768px) {
   h1 {
@@ -116,12 +113,14 @@ h1 {
     justify-content: left;
     gap: 24px;
   }
+  .stats.countup .item {
+    min-width: 42% !important;
+  }
+  .stats.bars .item {
+    min-width: 100%;
+  }
 
   .countup {
     padding-bottom: 0;
-  }
-
-  .item {
-    min-width: 42%;
   }
 }

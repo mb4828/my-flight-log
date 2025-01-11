@@ -9,6 +9,7 @@ import 'leaflet-kml';
 import 'leaflet.geodesic';
 import 'leaflet/dist/leaflet.css';
 import './App.scss';
+import InlineBarChart from './InlineBarChart';
 
 function App() {
   const [stats, setStats] = useState({} as any);
@@ -231,14 +232,14 @@ function App() {
           </div>
         </dl>
 
-        <dl className="stats">
+        <dl className="stats bars">
           <div className="item">
             <dt>Top Airports</dt>
             <dd>
               <ul>
                 {stats['airports']?.slice(0, 5).map((airport: any) => (
                   <li key={uuid()}>
-                    📍 {airport[0]} <span className="sparkline">{'❚'.repeat(airport[1])}</span> {airport[1]}
+                    📍 {airport[0]} <InlineBarChart value={airport[1]} />
                   </li>
                 ))}
               </ul>
@@ -250,8 +251,7 @@ function App() {
               <ul>
                 {stats['airlines']?.slice(0, 5).map((airline: any) => (
                   <li key={uuid()}>
-                    <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]}{' '}
-                    <span className="sparkline">{'❚'.repeat(airline[1])}</span> {airline[1]}
+                    <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]} <InlineBarChart value={airline[1]} />
                   </li>
                 ))}
               </ul>
@@ -263,7 +263,7 @@ function App() {
               <ul>
                 {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
                   <li key={uuid()}>
-                    ✈️ {aircraft[0]} <span className="sparkline">{'❚'.repeat(aircraft[1])}</span> {aircraft[1]}
+                    ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
                   </li>
                 ))}
               </ul>
