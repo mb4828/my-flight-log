@@ -36,7 +36,7 @@ const FlightMap = () => {
 
   function onMapLoad(event: any) {
     // load pushpin icon
-    event.target.loadImage('pushpin.png', (error: any, image: any) => {
+    event.target.loadImage('pushpin2.png', (error: any, image: any) => {
       if (error) throw error;
       event.target.addImage('pushpin', image);
 
