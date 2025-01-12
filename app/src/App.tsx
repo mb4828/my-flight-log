@@ -125,7 +125,7 @@ function App() {
           }
         }
 
-        // sliding content slides horizontally woth window scroll
+        // sliding content slides horizontally with window scroll
         if (!ticking) {
           requestAnimationFrame(() => {
             const slidingContent = document.querySelector('.sliding-content');
