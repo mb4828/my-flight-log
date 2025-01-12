@@ -36,6 +36,7 @@ function App() {
               d.ARRIVE_MILLIS = Luxon.DateTime.fromFormat(d.ARRIVE, 'h:mma').toMillis();
               d.TIME_MILLIS = Luxon.Duration.fromISO(`PT${d.TIME}`).as('milliseconds');
               d.DELAY_MILLIS = Luxon.Duration.fromISO(`PT${d.DELAY}`).as('milliseconds');
+              d.DISTANCE_NUM = parseInt(d.DISTANCE) || 0;
               return d;
             });
             const stats = {
@@ -237,10 +238,13 @@ function App() {
             <th onClick={() => onTableSort(6, 'DELAY_MILLIS')}>
               Delay {sortIdx === 6 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(7, 'TAIL')}>
-              Aircraft {sortIdx === 7 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            <th onClick={() => onTableSort(7, 'DISTANCE_NUM')}>
+              Distance {sortIdx === 7 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(8, 'TYPE')}>Type {sortIdx === 8 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
+            <th onClick={() => onTableSort(8, 'TAIL')}>
+              Aircraft {sortIdx === 8 ? (sortDir === 'a' ? '↑' : '↓') : ''}
+            </th>
+            <th onClick={() => onTableSort(9, 'TYPE')}>Type {sortIdx === 8 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
           </tr>
         </thead>
         <tbody>
@@ -255,6 +259,7 @@ function App() {
               <td>{flight.ARRIVE}</td>
               <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.TIME) }} />
               <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.DELAY, true) }} />
+              <td>{flight.DISTANCE_NUM} mi</td>
               <td>
                 <a href={`https://www.flightradar24.com/data/aircraft/${flight.TAIL}`} target="_blank" rel="noreferrer">
                   {flight.TAIL}
