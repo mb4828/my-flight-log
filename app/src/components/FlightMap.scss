@@ -1,0 +1,22 @@
+#flight-map {
+  height: max(40vh, 500px);
+
+  .view-button {
+    position: absolute !important;
+    z-index: 99;
+    top: 78px;
+    right: 8px;
+    padding: 4px 8px;
+    border: 0;
+    border-radius: 2px;
+    color: var(--text-color);
+    background-color: var(--map-ui-color);
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  #flight-map {
+    height: 300px;
+  }
+}

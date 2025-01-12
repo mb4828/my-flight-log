@@ -1,15 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
-import L from 'leaflet';
 import * as Luxon from 'luxon';
 import Papa from 'papaparse';
 import CountUp from 'react-countup';
 import { v4 as uuid } from 'uuid';
-import 'leaflet-kml';
-import 'leaflet.geodesic';
-import 'leaflet/dist/leaflet.css';
+import InlineBarChart from './components/InlineBarChart';
+import FlightMap from './components/FlightMap';
 import './App.scss';
-import InlineBarChart from './InlineBarChart';
 
 function App() {
   const [stats, setStats] = useState({} as any);
@@ -18,61 +15,6 @@ function App() {
   const [filterText, setFilterText] = useState('');
   const [sortIdx, setSortIdx] = useState(2);
   const [sortDir, setSortDir] = useState('d');
-  let flightMap: L.Map;
-
-  function initMap() {
-    if (flightMap === undefined) {
-      flightMap = L.map('flight-map', { center: [0, 0], zoom: 2, scrollWheelZoom: false });
-
-      // Add mapbox tiles layer
-      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution:
-          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/outdoors-v12',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNsMnFweGpuYTAwNXAzY3Bob3lqaG9rMG4ifQ.O8yYprih5CDw3tH0bDrCHw',
-      }).addTo(flightMap);
-
-      // Load the KML file
-      fetch('my-flight-log.kml')
-        .then((response) => response.text())
-        .then((kmlText) => {
-          const parser = new DOMParser();
-          const kml = parser.parseFromString(kmlText, 'text/xml');
-          const track = new L.KML(kml);
-
-          const layers = track.getLayers();
-          while (layers.length > 0) {
-            const layer = layers.pop();
-            if (layer instanceof L.LayerGroup) {
-              layers.push(...layer.getLayers());
-            } else if (layer instanceof L.Marker) {
-              const customIcon = L.icon({
-                iconUrl: 'pushpin.png',
-                iconSize: [13.5, 30],
-                iconAnchor: [7, 26],
-              });
-              layer.setIcon(customIcon);
-              flightMap.addLayer(layer);
-            } else if (layer instanceof L.Polyline) {
-              const latlngs = layer.getLatLngs();
-              const geodesicLayer = L.geodesic(latlngs as L.LatLngExpression[], {
-                color: '#0000FF',
-                weight: 2,
-                opacity: 0.8,
-              });
-              flightMap.removeLayer(layer);
-              flightMap.addLayer(geodesicLayer);
-            }
-          }
-
-          flightMap.fitBounds(track.getBounds());
-        })
-        .catch((err) => console.error('Failed to load KML file', err));
-    }
-  }
 
   function initStats() {
     fetch('MyFlightLog.csv')
@@ -164,9 +106,7 @@ function App() {
   }
 
   useEffect(() => {
-    initMap();
     initStats();
-
     // enable horizontal scrolling only when at bottom
     window.addEventListener('scroll', () => {
       const filterRect = document.getElementById('filter')?.getBoundingClientRect();
@@ -184,7 +124,8 @@ function App() {
   return (
     <>
       <h1>🌐 My Flight Logbook</h1>
-      <div id="flight-map"></div>
+
+      <FlightMap />
 
       <div id="data-overlay">
         <dl className="stats countup">

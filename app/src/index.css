@@ -9,6 +9,7 @@
     --box-shadow-color: #ccc;
     --table-border-color: #ccc;
     --bar-chart-color: #ddd;
+    --map-ui-color: #fff;
   }
 
 /* dark mode */
@@ -20,6 +21,7 @@
     --box-shadow-color: #111;
     --table-border-color: #000;
     --bar-chart-color: #444;
+    --map-ui-color: #1f1f1f;
   }
 }
 
@@ -31,4 +33,14 @@ body {
     overflow-x: hidden;
     color: var(--font-color);
     background-color: var(--body-background-color);
+}
+
+.mapboxgl-popup-tip {
+  border-bottom-color: var(--map-ui-color) !important;
+}
+.mapboxgl-popup-content {
+  background: var(--map-ui-color) !important;
+  color: var(--font-color) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important
 }
