@@ -261,7 +261,7 @@ function App() {
             <th onClick={() => onTableSort(8, 'TAIL')}>
               Aircraft {sortIdx === 8 ? (sortDir === 'a' ? '↑' : '↓') : ''}
             </th>
-            <th onClick={() => onTableSort(9, 'TYPE')}>Type {sortIdx === 8 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
+            <th onClick={() => onTableSort(9, 'TYPE')}>Type {sortIdx === 9 ? (sortDir === 'a' ? '↑' : '↓') : ''}</th>
           </tr>
         </thead>
         <tbody>
