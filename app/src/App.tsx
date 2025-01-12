@@ -125,7 +125,7 @@ function App() {
         // sliding content slides horizontally woth window scroll
         const slidingContent = document.querySelector('.sliding-content');
         const xScrollPos = Math.min(window.scrollX, 1000 - window.innerWidth); // 1000 is table min-width on mobile
-        slidingContent?.setAttribute('style', `left: ${xScrollPos}px`);
+        slidingContent?.setAttribute('style', `transform: translateX(${xScrollPos}px)`);
       }
     });
   }, []);
