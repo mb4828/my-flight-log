@@ -108,11 +108,10 @@ function App() {
 
   useEffect(() => {
     initStats();
-    // enable horizontal scrolling only when table is visible
+    // enable horizontal scrolling only when table is onscreen
     window.addEventListener('scroll', () => {
       const table = document.getElementById('flight-log')?.getBoundingClientRect();
-      console.log(table?.y);
-      if (table && table.y <= 46) {
+      if (table && table.y <= window.innerHeight) {
         document.body.style.overflowX = 'auto';
       } else {
         document.body.style.overflowX = 'hidden';
