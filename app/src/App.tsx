@@ -82,10 +82,7 @@ function App() {
   function formatDuration(duration: string, setColor = false): string {
     duration = duration.replace('H', 'H ').toLowerCase();
     if (setColor) {
-      duration = `<span style="color:${duration.startsWith('-') ? 'green' : 'red'}">${duration.replace(
-        '-',
-        ''
-      )}</span>`;
+      duration = `<span style="color:${parseInt(duration) <= 0 ? 'green' : 'red'}">${duration.replace('-', '')}</span>`;
     }
     return duration;
   }
