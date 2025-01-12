@@ -108,114 +108,125 @@ function App() {
 
   useEffect(() => {
     initStats();
-    // enable horizontal scrolling only when table is onscreen
     window.addEventListener('scroll', () => {
-      const table = document.getElementById('flight-log')?.getBoundingClientRect();
-      if (table && table.y <= window.innerHeight) {
-        document.body.style.overflowX = 'auto';
-      } else {
-        document.body.style.overflowX = 'hidden';
-        if (window.scrollX > 0) {
-          window.scrollTo(0, window.scrollY);
+      // if table is wider than screen width
+      if (window.innerWidth <= 1000) {
+        // enable horizontal scrolling when filter is visible onscreen
+        const filter = document.getElementById('filter')?.getBoundingClientRect();
+        if (filter && filter.y <= window.innerHeight) {
+          document.body.style.overflowX = 'auto';
+        } else {
+          document.body.style.overflowX = 'hidden';
+          if (window.scrollX > 0) {
+            window.scrollTo({ left: 0 });
+          }
         }
+
+        // sliding content slides horizontally woth window scroll
+        const slidingContent = document.querySelector('.sliding-content');
+        const xScrollPos = Math.min(window.scrollX, 1000 - window.innerWidth); // 1000 is table min-width on mobile
+        slidingContent?.setAttribute('style', `left: ${xScrollPos}px`);
       }
     });
   }, []);
 
   return (
     <>
-      <h1>🌐 My Flight Logbook</h1>
+      <div className="sliding-content">
+        <h1>🌐 My Flight Logbook</h1>
 
-      <FlightMap />
+        <FlightMap />
 
-      <div id="data-overlay">
-        <dl className="stats countup">
-          <div className="item">
-            <dt>Flights</dt>
-            <dd>
-              <CountUp end={stats['numFlights']} />
-            </dd>
-          </div>
+        <div id="data-overlay">
+          <dl className="stats countup">
+            <div className="item">
+              <dt>Flights</dt>
+              <dd>
+                <CountUp end={stats['numFlights']} />
+              </dd>
+            </div>
 
-          <div className="item">
-            <dt>Distance</dt>
-            <dd>
-              <CountUp end={stats['distance']} /> mi
-            </dd>
-          </div>
+            <div className="item">
+              <dt>Distance</dt>
+              <dd>
+                <CountUp end={stats['distance']} /> mi
+              </dd>
+            </div>
 
-          <div className="item">
-            <dt>Flight Time</dt>
-            <dd>
-              <CountUp end={parseInt(stats['flightTime']?.days)} />d{' '}
-              <CountUp end={parseInt(stats['flightTime']?.hours)} />h
-            </dd>
-          </div>
+            <div className="item">
+              <dt>Flight Time</dt>
+              <dd>
+                <CountUp end={parseInt(stats['flightTime']?.days)} />d{' '}
+                <CountUp end={parseInt(stats['flightTime']?.hours)} />h
+              </dd>
+            </div>
 
-          <div className="item">
-            <dt>Delays</dt>
-            <dd>
-              <CountUp end={parseInt(stats['delays']?.hours)} />h <CountUp end={parseInt(stats['delays']?.minutes)} />m
-            </dd>
-          </div>
+            <div className="item">
+              <dt>Delays</dt>
+              <dd>
+                <CountUp end={parseInt(stats['delays']?.hours)} />h <CountUp end={parseInt(stats['delays']?.minutes)} />
+                m
+              </dd>
+            </div>
 
-          <div className="item">
-            <dt>Airports</dt>
-            <dd>
-              <CountUp end={stats['airports']?.length} />
-            </dd>
-          </div>
+            <div className="item">
+              <dt>Airports</dt>
+              <dd>
+                <CountUp end={stats['airports']?.length} />
+              </dd>
+            </div>
 
-          <div className="item">
-            <dt>Airlines</dt>
-            <dd>
-              <CountUp end={stats['airlines']?.length} />
-            </dd>
-          </div>
-        </dl>
+            <div className="item">
+              <dt>Airlines</dt>
+              <dd>
+                <CountUp end={stats['airlines']?.length} />
+              </dd>
+            </div>
+          </dl>
 
-        <dl className="stats bars">
-          <div className="item">
-            <dt>Top Airports</dt>
-            <dd>
-              <ul>
-                {stats['airports']?.slice(0, 5).map((airport: any) => (
-                  <li key={uuid()}>
-                    📍 {airport[0]} <InlineBarChart value={airport[1]} />
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-          <div className="item">
-            <dt>Top Airlines</dt>
-            <dd>
-              <ul>
-                {stats['airlines']?.slice(0, 5).map((airline: any) => (
-                  <li key={uuid()}>
-                    <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]} <InlineBarChart value={airline[1]} />
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-          <div className="item">
-            <dt>Top Aircraft</dt>
-            <dd>
-              <ul>
-                {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
-                  <li key={uuid()}>
-                    ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
-                  </li>
-                ))}
-              </ul>
-            </dd>
-          </div>
-        </dl>
+          <dl className="stats bars">
+            <div className="item">
+              <dt>Top Airports</dt>
+              <dd>
+                <ul>
+                  {stats['airports']?.slice(0, 5).map((airport: any) => (
+                    <li key={uuid()}>
+                      📍 {airport[0]} <InlineBarChart value={airport[1]} />
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+            <div className="item">
+              <dt>Top Airlines</dt>
+              <dd>
+                <ul>
+                  {stats['airlines']?.slice(0, 5).map((airline: any) => (
+                    <li key={uuid()}>
+                      <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]}{' '}
+                      <InlineBarChart value={airline[1]} />
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+            <div className="item">
+              <dt>Top Aircraft</dt>
+              <dd>
+                <ul>
+                  {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
+                    <li key={uuid()}>
+                      ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
       </div>
 
       <input id="filter" type="text" placeholder="⌕ Filter" value={filterText} onChange={onFilterChange} />
-
       <table id="flight-log">
         <thead>
           <tr>

@@ -52,7 +52,7 @@ h1 {
   position: sticky;
   top: 0;
   width: calc(100% - 16px);
-  min-width: 1000px;
+  min-width: calc(1000px - 16px);
   height: 30px;
   padding: 8px 0 8px 16px;
   border: 0;
@@ -115,4 +115,8 @@ h1 {
   .countup {
     padding-bottom: 0;
   }
+}
+
+.sliding-content {
+  position: relative;
 }
