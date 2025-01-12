@@ -8,6 +8,8 @@ import InlineBarChart from './components/InlineBarChart';
 import FlightMap from './components/FlightMap';
 import './App.scss';
 
+let ticking = false;
+
 function App() {
   const [stats, setStats] = useState({} as any);
   const [data, setData] = useState([] as any[]);
@@ -108,6 +110,7 @@ function App() {
 
   useEffect(() => {
     initStats();
+
     window.addEventListener('scroll', () => {
       // if table is wider than screen width
       if (window.innerWidth <= 1000) {
@@ -123,9 +126,15 @@ function App() {
         }
 
         // sliding content slides horizontally woth window scroll
-        const slidingContent = document.querySelector('.sliding-content');
-        const xScrollPos = Math.min(window.scrollX, 1000 - window.innerWidth); // 1000 is table min-width on mobile
-        slidingContent?.setAttribute('style', `transform: translateX(${xScrollPos}px)`);
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            const slidingContent = document.querySelector('.sliding-content');
+            const xScrollPos = Math.min(window.scrollX, 1000 - window.innerWidth); // 1000 is table min-width on mobile
+            slidingContent?.setAttribute('style', `transform: translateX(${xScrollPos}px)`);
+            ticking = false;
+          });
+          ticking = true;
+        }
       }
     });
   }, []);
