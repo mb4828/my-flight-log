@@ -196,7 +196,7 @@ function App() {
               <dd>
                 <ul>
                   {stats['airports']?.slice(0, 5).map((airport: any) => (
-                    <li key={uuid()}>
+                    <li key={airport[0]}>
                       📍 {airport[0]} <InlineBarChart value={airport[1]} />
                     </li>
                   ))}
@@ -208,7 +208,7 @@ function App() {
               <dd>
                 <ul>
                   {stats['airlines']?.slice(0, 5).map((airline: any) => (
-                    <li key={uuid()}>
+                    <li key={airline[0]}>
                       <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]}{' '}
                       <InlineBarChart value={airline[1]} />
                     </li>
@@ -221,7 +221,7 @@ function App() {
               <dd>
                 <ul>
                   {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
-                    <li key={uuid()}>
+                    <li key={aircraft[0]}>
                       ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
                     </li>
                   ))}
