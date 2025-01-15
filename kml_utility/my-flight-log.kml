@@ -568,6 +568,13 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="461">
+            <LineStyle id="462">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -2490,6 +2497,24 @@
             <styleUrl>#457</styleUrl>
             <LineString id="455">
                 <coordinates>-74.169,40.692,0.0 -80.096,26.683,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="460">
+            <name>PBI ‣ EWR [2025-01-14]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1777&lt;/b&gt; - 2025-01-14&lt;br&gt;
+            WEST PALM BEACH to NEWARK
+            &lt;hr&gt;
+            🛫 PALM BEACH INTERNATIONAL - 2:43PM&lt;br&gt;
+            🛬 NEWARK LIBERTY INTERNATIONAL - 5:46PM&lt;br&gt;
+            ⏱️ 3H03M&lt;br&gt;
+            🌎 1025MI&lt;br&gt;
+            ✈️ N17310 (B73M)
+        </description>
+            <styleUrl>#461</styleUrl>
+            <LineString id="459">
+                <coordinates>-80.096,26.683,0.0 -74.169,40.692,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
