@@ -209,7 +209,7 @@ function App() {
                 <ul>
                   {stats['airlines']?.slice(0, 5).map((airline: any) => (
                     <li key={airline[0]}>
-                      <img src={`airlines/${airline[0]}.jpg`} alt="" /> {airline[0]}{' '}
+                      <img src={`airlines/${airline[0]}.png`} alt="" /> {airline[0]}{' '}
                       <InlineBarChart value={airline[1]} />
                     </li>
                   ))}
@@ -268,7 +268,7 @@ function App() {
           {filteredData.map((flight) => (
             <tr key={uuid()}>
               <td>
-                <img src={`airlines/${flight.AIRLINE}.jpg`} alt="" /> {flight.AIRLINE_FLIGHT}
+                <img src={`airlines/${flight.AIRLINE}.png`} alt="" /> {flight.AIRLINE_FLIGHT}
               </td>
               <td>{flight.ORIGIN_DEST}</td>
               <td>{flight.DATE}</td>
