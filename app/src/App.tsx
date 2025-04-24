@@ -6,6 +6,7 @@ import CountUp from 'react-countup';
 import { v4 as uuid } from 'uuid';
 import InlineBarChart from './components/InlineBarChart';
 import FlightMap from './components/FlightMap';
+import Typewriter from './components/Typewriter';
 import './App.scss';
 
 let ticking = false;
@@ -70,7 +71,9 @@ function App() {
               ).sort((a: any, b: any) => b[1] - a[1]),
             };
             data.sort((a: any, b: any) => (a.DATE < b.DATE ? 1 : -1));
-            setStats(stats);
+            setTimeout(() => {
+              setStats(stats);
+            }, 1500);
             setData(data);
             setFilteredData(data);
           },
@@ -146,44 +149,56 @@ function App() {
         <div id="data-overlay">
           <dl className="stats countup">
             <div className="item">
-              <dt>Flights</dt>
+              <dt>
+                <Typewriter text="Flights" />
+              </dt>
               <dd>
                 <CountUp end={stats['numFlights']} />
               </dd>
             </div>
 
             <div className="item">
-              <dt>Distance</dt>
+              <dt>
+                <Typewriter text="Distance" />
+              </dt>
               <dd>
-                <CountUp end={stats['distance']} /> mi
+                <CountUp end={stats['distance']} suffix=" mi" />
               </dd>
             </div>
 
             <div className="item">
-              <dt>Flight Time</dt>
+              <dt>
+                <Typewriter text="Flight Time" />
+              </dt>
               <dd>
-                <CountUp end={parseInt(stats['flightTime']?.days)} />d{' '}
-                <CountUp end={parseInt(stats['flightTime']?.hours)} />h
+                <CountUp end={parseInt(stats['flightTime']?.days)} suffix=" d " />
+                <CountUp end={parseInt(stats['flightTime']?.hours)} suffix=" h" />
               </dd>
             </div>
 
             <div className="item">
-              <dt>Delays</dt>
+              <dt>
+                <Typewriter text="Delays" />
+              </dt>
               <dd>
-                <CountUp end={parseInt(stats['delays']?.hours)} />h <CountUp end={parseInt(stats['delays']?.minutes)} />
-                m
+                <CountUp end={parseInt(stats['delays']?.hours)} suffix=" h " />
+                <CountUp end={parseInt(stats['delays']?.minutes)} suffix=" m" />
               </dd>
             </div>
 
             <div className="item">
-              <dt>Airports</dt>
+              <dt>
+                <Typewriter text="Airports" />
+              </dt>
               <dd>
                 <CountUp end={stats['airports']?.length} />
               </dd>
             </div>
 
             <div className="item">
-              <dt>Airlines</dt>
+              <dt>
+                <Typewriter text="Airlines" />
+              </dt>
               <dd>
                 <CountUp end={stats['airlines']?.length} />
               </dd>
@@ -192,7 +207,9 @@ function App() {
 
           <dl className="stats bars">
             <div className="item">
-              <dt>Top Airports</dt>
+              <dt>
+                <Typewriter text="Top Airports" />
+              </dt>
               <dd>
                 <ul>
                   {stats['airports']?.slice(0, 5).map((airport: any) => (
@@ -204,7 +221,9 @@ function App() {
               </dd>
             </div>
             <div className="item">
-              <dt>Top Airlines</dt>
+              <dt>
+                <Typewriter text="Top Airlines" />
+              </dt>
               <dd>
                 <ul>
                   {stats['airlines']?.slice(0, 5).map((airline: any) => (
@@ -217,7 +236,9 @@ function App() {
               </dd>
             </div>
             <div className="item">
-              <dt>Top Aircraft</dt>
+              <dt>
+                <Typewriter text="Top Aircraft" />
+              </dt>
               <dd>
                 <ul>
                   {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (

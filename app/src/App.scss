@@ -44,6 +44,9 @@ h1 {
 .stats.countup dd {
   font-size: 175%;
 }
+.stats.countup .item {
+  min-width: 10%;
+}
 .stats.bars .item {
   min-width: 33%;
 }
