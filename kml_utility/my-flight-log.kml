@@ -575,6 +575,27 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="465">
+            <LineStyle id="466">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="475">
+            <LineStyle id="476">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="485">
+            <LineStyle id="486">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -885,6 +906,34 @@
                     <scale>0</scale>
                 </LabelStyle>
             </Style>
+            <Style id="469">
+                <IconStyle id="470">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="471">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="472">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="479">
+                <IconStyle id="480">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="481">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="482">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
             <name>Airports</name>
             <Placemark id="8">
                 <name>JFK</name>
@@ -1038,6 +1087,20 @@
                 <styleUrl>#447</styleUrl>
                 <Point id="445">
                     <coordinates>-112.008,33.434,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="468">
+                <name>ATH</name>
+                <styleUrl>#469</styleUrl>
+                <Point id="467">
+                    <coordinates>23.947,37.936,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="478">
+                <name>JTR</name>
+                <styleUrl>#479</styleUrl>
+                <Point id="477">
+                    <coordinates>25.479,36.400,0.0</coordinates>
                 </Point>
             </Placemark>
         </Folder>
@@ -2515,6 +2578,60 @@
             <styleUrl>#461</styleUrl>
             <LineString id="459">
                 <coordinates>-80.096,26.683,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="464">
+            <name>EWR ‣ ATH [2025-04-11]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA116&lt;/b&gt; - 2025-04-11&lt;br&gt;
+            NEWARK to ATHENS
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 8:59PM&lt;br&gt;
+            🛬 ATHINIA - 1:33PM&lt;br&gt;
+            ⏱️ 9H34M&lt;br&gt;
+            🌎 4944MI&lt;br&gt;
+            ✈️ N661UA (B763)
+        </description>
+            <styleUrl>#465</styleUrl>
+            <LineString id="463">
+                <coordinates>-74.169,40.692,0.0 23.947,37.936,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="474">
+            <name>JTR ‣ ATH [2025-04-20]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_FR_15_15_s.png&quot;&gt;
+            &lt;b&gt;FR1233&lt;/b&gt; - 2025-04-20&lt;br&gt;
+            SANTORINI to ATHENS
+            &lt;hr&gt;
+            🛫 SANTORINI - 7:30PM&lt;br&gt;
+            🛬 ATHINIA - 8:10PM&lt;br&gt;
+            ⏱️ 40M&lt;br&gt;
+            🌎 135MI&lt;br&gt;
+            ✈️ EI-ENW (B738)
+        </description>
+            <styleUrl>#475</styleUrl>
+            <LineString id="473">
+                <coordinates>25.479,36.400,0.0 23.947,37.936,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="484">
+            <name>ATH ‣ JFK [2025-04-23]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_N0_15_15_s.png&quot;&gt;
+            &lt;b&gt;N0503&lt;/b&gt; - 2025-04-23&lt;br&gt;
+            ATHENS to NEW YORK
+            &lt;hr&gt;
+            🛫 ATHINIA - 7:55AM&lt;br&gt;
+            🛬 JOHN F KENNEDY INTERNATIONAL - 11:19AM&lt;br&gt;
+            ⏱️ 10H24M&lt;br&gt;
+            🌎 4929MI&lt;br&gt;
+            ✈️ LN-FND (B789)
+        </description>
+            <styleUrl>#485</styleUrl>
+            <LineString id="483">
+                <coordinates>23.947,37.936,0.0 -73.779,40.640,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>

@@ -30,6 +30,7 @@ def build_kml(airports, flights):
     for flight in flights:
         # add flight line
         ls = kml.newlinestring()
+        print(flight)
         orig = next(a for a in airports if a['IATA'] == flight['ORIGIN'] and float(
             a['LATITUDE']) != 0)
         dest = next(a for a in airports if a['IATA'] == flight['DESTINATION'] and float(
