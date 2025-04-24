@@ -152,7 +152,7 @@ function App() {
                 <Typewriter text="Flights" />
               </dt>
               <dd>
-                <Placeholder width={150} height={37} isReady={!!stats['numFlights']}>
+                <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
                   <CountUp end={stats['numFlights']} />
                 </Placeholder>
               </dd>
@@ -163,7 +163,7 @@ function App() {
                 <Typewriter text="Distance" />
               </dt>
               <dd>
-                <Placeholder width={150} height={37} isReady={!!stats['distance']}>
+                <Placeholder width={125} height={37} isReady={!!stats['distance']}>
                   <CountUp end={stats['distance']} suffix=" mi" />
                 </Placeholder>
               </dd>
@@ -174,7 +174,7 @@ function App() {
                 <Typewriter text="Flight Time" />
               </dt>
               <dd>
-                <Placeholder width={150} height={37} isReady={!!stats['flightTime']}>
+                <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
                   <CountUp end={parseInt(stats['flightTime']?.days)} suffix=" d " />
                   <CountUp end={parseInt(stats['flightTime']?.hours)} suffix=" h" />
                 </Placeholder>
@@ -186,7 +186,7 @@ function App() {
                 <Typewriter text="Delays" />
               </dt>
               <dd>
-                <Placeholder width={150} height={37} isReady={!!stats['delays']}>
+                <Placeholder width={125} height={37} isReady={!!stats['delays']}>
                   <CountUp end={parseInt(stats['delays']?.hours)} suffix=" h " />
                   <CountUp end={parseInt(stats['delays']?.minutes)} suffix=" m" />
                 </Placeholder>
@@ -198,7 +198,7 @@ function App() {
                 <Typewriter text="Airports" />
               </dt>
               <dd>
-                <Placeholder width={150} height={37} isReady={!!stats['airports']}>
+                <Placeholder width={125} height={37} isReady={!!stats['airports']}>
                   <CountUp end={stats['airports']?.length} />
                 </Placeholder>
               </dd>
@@ -209,7 +209,7 @@ function App() {
                 <Typewriter text="Airlines" />
               </dt>
               <dd>
-                <Placeholder width={150} height={37} isReady={!!stats['airlines']}>
+                <Placeholder width={125} height={37} isReady={!!stats['airlines']}>
                   <CountUp end={stats['airlines']?.length} />
                 </Placeholder>
               </dd>
