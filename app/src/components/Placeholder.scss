@@ -1,0 +1,30 @@
+.placeholder {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bar-chart-color);
+}
+
+.shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 150%;
+  background: linear-gradient(
+    to right,
+    var(--bar-chart-color) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    var(--bar-chart-color) 100%
+  );
+  animation: shimmer 1s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 100%;
+  }
+}

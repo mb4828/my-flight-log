@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import * as Luxon from 'luxon';
 import Papa from 'papaparse';
 import CountUp from 'react-countup';
-import { v4 as uuid } from 'uuid';
-import InlineBarChart from './components/InlineBarChart';
 import FlightMap from './components/FlightMap';
-import Typewriter from './components/Typewriter';
+import InlineBarChart from './components/InlineBarChart';
+import Placeholder from './components/Placeholder';
 import './App.scss';
+import Typewriter from './components/Typewriter';
 
 let ticking = false;
 
@@ -71,9 +72,7 @@ function App() {
               ).sort((a: any, b: any) => b[1] - a[1]),
             };
             data.sort((a: any, b: any) => (a.DATE < b.DATE ? 1 : -1));
-            setTimeout(() => {
-              setStats(stats);
-            }, 1500);
+            setTimeout(() => setStats(stats), 250);
             setData(data);
             setFilteredData(data);
           },
@@ -153,7 +152,9 @@ function App() {
                 <Typewriter text="Flights" />
               </dt>
               <dd>
-                <CountUp end={stats['numFlights']} />
+                <Placeholder width={150} height={37} isReady={!!stats['numFlights']}>
+                  <CountUp end={stats['numFlights']} />
+                </Placeholder>
               </dd>
             </div>
 
@@ -162,7 +163,9 @@ function App() {
                 <Typewriter text="Distance" />
               </dt>
               <dd>
-                <CountUp end={stats['distance']} suffix=" mi" />
+                <Placeholder width={150} height={37} isReady={!!stats['distance']}>
+                  <CountUp end={stats['distance']} suffix=" mi" />
+                </Placeholder>
               </dd>
             </div>
 
@@ -171,8 +174,10 @@ function App() {
                 <Typewriter text="Flight Time" />
               </dt>
               <dd>
-                <CountUp end={parseInt(stats['flightTime']?.days)} suffix=" d " />
-                <CountUp end={parseInt(stats['flightTime']?.hours)} suffix=" h" />
+                <Placeholder width={150} height={37} isReady={!!stats['flightTime']}>
+                  <CountUp end={parseInt(stats['flightTime']?.days)} suffix=" d " />
+                  <CountUp end={parseInt(stats['flightTime']?.hours)} suffix=" h" />
+                </Placeholder>
               </dd>
             </div>
 
@@ -181,8 +186,10 @@ function App() {
                 <Typewriter text="Delays" />
               </dt>
               <dd>
-                <CountUp end={parseInt(stats['delays']?.hours)} suffix=" h " />
-                <CountUp end={parseInt(stats['delays']?.minutes)} suffix=" m" />
+                <Placeholder width={150} height={37} isReady={!!stats['delays']}>
+                  <CountUp end={parseInt(stats['delays']?.hours)} suffix=" h " />
+                  <CountUp end={parseInt(stats['delays']?.minutes)} suffix=" m" />
+                </Placeholder>
               </dd>
             </div>
 
@@ -191,7 +198,9 @@ function App() {
                 <Typewriter text="Airports" />
               </dt>
               <dd>
-                <CountUp end={stats['airports']?.length} />
+                <Placeholder width={150} height={37} isReady={!!stats['airports']}>
+                  <CountUp end={stats['airports']?.length} />
+                </Placeholder>
               </dd>
             </div>
 
@@ -200,7 +209,9 @@ function App() {
                 <Typewriter text="Airlines" />
               </dt>
               <dd>
-                <CountUp end={stats['airlines']?.length} />
+                <Placeholder width={150} height={37} isReady={!!stats['airlines']}>
+                  <CountUp end={stats['airlines']?.length} />
+                </Placeholder>
               </dd>
             </div>
           </dl>
@@ -212,11 +223,13 @@ function App() {
               </dt>
               <dd>
                 <ul>
-                  {stats['airports']?.slice(0, 5).map((airport: any) => (
-                    <li key={airport[0]}>
-                      📍 {airport[0]} <InlineBarChart value={airport[1]} />
-                    </li>
-                  ))}
+                  <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.airports}>
+                    {stats['airports']?.slice(0, 5).map((airport: any) => (
+                      <li key={airport[0]}>
+                        📍 {airport[0]} <InlineBarChart value={airport[1]} />
+                      </li>
+                    ))}
+                  </Placeholder>
                 </ul>
               </dd>
             </div>
@@ -226,12 +239,14 @@ function App() {
               </dt>
               <dd>
                 <ul>
-                  {stats['airlines']?.slice(0, 5).map((airline: any) => (
-                    <li key={airline[0]}>
-                      <img src={`airlines/${airline[0]}.png`} alt="" /> {airline[0]}{' '}
-                      <InlineBarChart value={airline[1]} />
-                    </li>
-                  ))}
+                  <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.airlines}>
+                    {stats['airlines']?.slice(0, 5).map((airline: any) => (
+                      <li key={airline[0]}>
+                        <img src={`airlines/${airline[0]}.png`} alt="" /> {airline[0]}{' '}
+                        <InlineBarChart value={airline[1]} />
+                      </li>
+                    ))}
+                  </Placeholder>
                 </ul>
               </dd>
             </div>
@@ -241,11 +256,13 @@ function App() {
               </dt>
               <dd>
                 <ul>
-                  {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
-                    <li key={aircraft[0]}>
-                      ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
-                    </li>
-                  ))}
+                  <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.aircraft}>
+                    {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
+                      <li key={aircraft[0]}>
+                        ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
+                      </li>
+                    ))}
+                  </Placeholder>
                 </ul>
               </dd>
             </div>

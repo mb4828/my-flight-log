@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Placeholder from './Placeholder';
 import './Typewriter.scss';
 
 interface TypewriterProps {
@@ -8,43 +9,52 @@ interface TypewriterProps {
   typingSpeed?: number; // Optional speed of typing effect
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ text, startDelay = 100, typingSpeed = 0.1 }) => {
-  const isMounted = useRef(false);
+const Typewriter: React.FC<TypewriterProps> = ({ text, startDelay = 250, typingSpeed = 0.1 }) => {
+  const [isMounted, setIsMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const uuid = uuidv4();
 
   useEffect(() => {
-    const typewriter = document.getElementById(`typewriter-${uuid}`);
-    const animationName = `typing-${uuid}`;
-    const textLength = text.length;
-    const duration = textLength * typingSpeed;
+    // do animation after loading is done
+    if (!isLoading && !isMounted) {
+      const typewriter = document.getElementById(`typewriter-${uuid}`);
+      const animationName = `typing-${uuid}`;
+      const textLength = text.length;
+      const duration = textLength * typingSpeed;
 
-    // create a unique animation for each instance
-    if (typewriter && !isMounted.current) {
-      const style = document.createElement('style');
-      style.textContent = `
-            @keyframes ${animationName} {
-                from { width: 0ch; }
-                to { width: ${textLength}ch; }
-            }
-        `;
-      document.head.appendChild(style);
+      // create a unique animation for each instance
+      if (typewriter) {
+        const style = document.createElement('style');
+        style.textContent = `
+              @keyframes ${animationName} {
+                  from { width: 0ch; }
+                  to { width: ${textLength}ch; }
+              }
+          `;
+        document.head.appendChild(style);
 
-      // apply the animation to the typewriter element
-      typewriter.style.animation = `${animationName} ${duration}s steps(${textLength}) 1 both`;
-      typewriter.style.animationDelay = `${startDelay}ms`;
+        // apply the animation to the typewriter element
+        typewriter.style.animation = `${animationName} ${duration}s steps(${textLength}) 1 both`;
 
-      // remove the right border after the animation ends
-      typewriter.addEventListener('animationend', () => {
-        setTimeout(() => (typewriter.style.borderRight = 'none'), typingSpeed * 1000);
-      });
+        // remove the right border after the animation ends
+        typewriter.addEventListener('animationend', () => {
+          setTimeout(() => (typewriter.style.borderRight = 'none'), typingSpeed * 1000);
+        });
+      }
+      setIsMounted(true);
     }
-    isMounted.current = true;
-  }, [text, startDelay, typingSpeed, uuid]);
+  }, [isLoading, isMounted, text, typingSpeed, uuid]);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), startDelay);
+  });
 
   return (
-    <span id={`typewriter-${uuid}`} className="typewriter">
-      {text}
-    </span>
+    <Placeholder width={50} height={14} isReady={!isLoading}>
+      <span id={`typewriter-${uuid}`} className="typewriter">
+        {text}
+      </span>
+    </Placeholder>
   );
 };
 
