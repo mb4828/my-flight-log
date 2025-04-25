@@ -10,6 +10,10 @@
     --table-border-color: #ccc;
     --bar-chart-color: #ddd;
     --map-ui-color: #fff;
+    --first-class-color: #7A36B1;
+    --premium-class-color: #F13D65;
+    --eco-plus-class-color: #FDAD0F;
+    --economy-class-color: #05BA48;
   }
 
 /* dark mode */
@@ -22,6 +26,10 @@
     --table-border-color: #000;
     --bar-chart-color: #444;
     --map-ui-color: #1f1f1f;
+    --first-class-color: #7A36B1;
+    --premium-class-color: #F13D65;
+    --eco-plus-class-color: #FDAD0F;
+    --economy-class-color: #05BA48;
   }
 }
 
