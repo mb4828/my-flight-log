@@ -8,7 +8,6 @@ import FlightMap from './components/FlightMap';
 import InlineBarChart from './components/InlineBarChart';
 import Placeholder from './components/Placeholder';
 import './App.scss';
-import Typewriter from './components/Typewriter';
 
 let ticking = false;
 
@@ -149,7 +148,9 @@ function App() {
           <dl className="stats countup">
             <div className="item">
               <dt>
-                <Typewriter text="Flights" />
+                <Placeholder width={50} height={14} isReady={!!stats['numFlights']}>
+                  Flights
+                </Placeholder>
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
@@ -160,7 +161,9 @@ function App() {
 
             <div className="item">
               <dt>
-                <Typewriter text="Distance" />
+                <Placeholder width={50} height={14} isReady={!!stats['distance']}>
+                  Distance
+                </Placeholder>
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['distance']}>
@@ -171,7 +174,9 @@ function App() {
 
             <div className="item">
               <dt>
-                <Typewriter text="Flight Time" />
+                <Placeholder width={50} height={14} isReady={!!stats['flightTime']}>
+                  Flight Time
+                </Placeholder>
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
@@ -183,7 +188,9 @@ function App() {
 
             <div className="item">
               <dt>
-                <Typewriter text="Delays" />
+                <Placeholder width={50} height={14} isReady={!!stats['delays']}>
+                  Delays
+                </Placeholder>
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['delays']}>
@@ -195,7 +202,9 @@ function App() {
 
             <div className="item">
               <dt>
-                <Typewriter text="Airports" />
+                <Placeholder width={50} height={14} isReady={!!stats['airports']}>
+                  Airports
+                </Placeholder>
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['airports']}>
@@ -206,7 +215,9 @@ function App() {
 
             <div className="item">
               <dt>
-                <Typewriter text="Airlines" />
+                <Placeholder width={50} height={14} isReady={!!stats['airlines']}>
+                  Airlines
+                </Placeholder>
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['airlines']}>
@@ -219,7 +230,9 @@ function App() {
           <dl className="stats bars">
             <div className="item">
               <dt>
-                <Typewriter text="Top Airports" />
+                <Placeholder width={50} height={14} isReady={!!stats['airports']}>
+                  Top Airports
+                </Placeholder>
               </dt>
               <dd>
                 <ul>
@@ -235,7 +248,9 @@ function App() {
             </div>
             <div className="item">
               <dt>
-                <Typewriter text="Top Airlines" />
+                <Placeholder width={50} height={14} isReady={!!stats['airlines']}>
+                  Top Airlines
+                </Placeholder>
               </dt>
               <dd>
                 <ul>
@@ -252,7 +267,9 @@ function App() {
             </div>
             <div className="item">
               <dt>
-                <Typewriter text="Top Aircraft" />
+                <Placeholder width={50} height={14} isReady={!!stats['aircraft']}>
+                  Top Aircraft
+                </Placeholder>
               </dt>
               <dd>
                 <ul>
