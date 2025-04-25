@@ -6,7 +6,7 @@ interface InlineBarChartProps {
   maxWidth?: number; // Optional maximum width for scaling
 }
 
-const InlineBarChart: React.FC<InlineBarChartProps> = ({ value, maxWidth = 300 }) => {
+const InlineBarChart: React.FC<InlineBarChartProps> = ({ value, maxWidth = 250 }) => {
   const barRef = useRef<HTMLDivElement>(null);
   const numberRef = useRef<HTMLSpanElement>(null);
 

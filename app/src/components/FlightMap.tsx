@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Map, Popup } from 'react-map-gl';
 import { kml } from '@tmcw/togeojson';
+import greatCircle from '@turf/great-circle';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './FlightMap.scss';
 
@@ -28,6 +29,21 @@ const FlightMap = () => {
         feature.properties = {
           title: feature.properties.name,
         };
+      } else if (feature.geometry.type === 'LineString') {
+        const coords = feature.geometry.coordinates;
+        const segments = [];
+
+        for (let i = 0; i < coords.length - 1; i++) {
+          const start = coords[i];
+          const end = coords[i + 1];
+          const gc = greatCircle(start, end, { npoints: 100 });
+          gc.properties = { ...feature.properties };
+          segments.push(gc);
+        }
+
+        feature.geometry.coordinates = segments.reduce((acc: any, segment: any) => {
+          return acc.concat(segment.geometry.coordinates);
+        }, []);
       }
       return feature;
     });
@@ -57,7 +73,7 @@ const FlightMap = () => {
         },
         paint: {
           'line-color': '#0000ff',
-          'line-width': 2.5,
+          'line-width': 2.25,
           'line-opacity': 0.8,
         },
       });
