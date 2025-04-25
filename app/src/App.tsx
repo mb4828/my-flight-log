@@ -180,8 +180,8 @@ function App() {
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
-                  <CountUp end={parseInt(stats['flightTime']?.days)} suffix=" d " />
-                  <CountUp end={parseInt(stats['flightTime']?.hours)} suffix=" h" />
+                  <CountUp end={parseInt(stats['flightTime']?.days)} suffix="d " />
+                  <CountUp end={parseInt(stats['flightTime']?.hours)} suffix="h" />
                 </Placeholder>
               </dd>
             </div>
@@ -194,8 +194,8 @@ function App() {
               </dt>
               <dd>
                 <Placeholder width={125} height={37} isReady={!!stats['delays']}>
-                  <CountUp end={parseInt(stats['delays']?.hours)} suffix=" h " />
-                  <CountUp end={parseInt(stats['delays']?.minutes)} suffix=" m" />
+                  <CountUp end={parseInt(stats['delays']?.hours)} suffix="h " />
+                  <CountUp end={parseInt(stats['delays']?.minutes)} suffix="m" />
                 </Placeholder>
               </dd>
             </div>
