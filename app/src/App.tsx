@@ -71,7 +71,7 @@ function App() {
               ).sort((a: any, b: any) => b[1] - a[1]),
             };
             data.sort((a: any, b: any) => (a.DATE < b.DATE ? 1 : -1));
-            setTimeout(() => setStats(stats), 250);
+            setStats(stats);
             setData(data);
             setFilteredData(data);
           },
