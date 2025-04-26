@@ -1,0 +1,95 @@
+#filter {
+  position: sticky;
+  top: 0;
+  width: calc(100% - 16px);
+  min-width: calc(1400px - 16px);
+  height: 30px;
+  padding: 8px 0 8px 16px;
+  border: 0;
+  z-index: 99;
+  background-color: var(--accent-background-color);
+  color: var(--font-color);
+}
+#filter:focus {
+  outline: none !important;
+}
+
+#flight-log {
+  width: 100%;
+  min-width: 1400px;
+  background-color: var(--body-background-color);
+
+  th {
+    position: sticky;
+    top: 46px;
+    background: var(--body-background-color);
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 0.75rem;
+    text-align: left;
+    z-index: 99;
+  }
+
+  th,
+  td {
+    height: 30px;
+    padding: 8px;
+    border-bottom: 1px solid var(--table-border-color);
+  }
+
+  .seats {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    img {
+      margin-top: -8px;
+    }
+  }
+
+  .seatNum {
+    min-width: 3ch;
+    text-align: center;
+  }
+
+  img {
+    position: relative;
+    top: 4px;
+    width: 20px;
+  }
+
+  img.airline {
+    margin-right: 6px;
+  }
+
+  img.seatPos {
+    width: 16px;
+  }
+
+  .badge {
+    color: white;
+    font-weight: bold;
+    background-color: var(--eco-plus-class-color);
+    border-radius: 4px;
+    padding: 0 4px;
+    font-size: 0.75rem;
+  }
+
+  .badge-F {
+    background-color: var(--first-class-color);
+  }
+
+  .badge-P {
+    background-color: var(--premium-class-color);
+  }
+
+  .badge-E {
+    background-color: var(--economy-class-color);
+  }
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  img.seatPos {
+    filter: invert(0.5);
+  }
+}

@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
-import { v4 as uuid } from 'uuid';
 import * as Luxon from 'luxon';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
 import Papa from 'papaparse';
 import CountUp from 'react-countup';
 import FlightMap from './components/FlightMap';
-import InlineBarChart from './components/InlineBarChart';
+import FlightTable from './components/FlightTable';
+import Highchart from './components/Highchart';
 import Placeholder from './components/Placeholder';
 import './App.scss';
 
@@ -16,10 +14,6 @@ let ticking = false;
 function App() {
   const [stats, setStats] = useState({} as any);
   const [data, setData] = useState([] as any[]);
-  const [filteredData, setFilteredData] = useState([] as any[]);
-  const [filterText, setFilterText] = useState('');
-  const [sortIdx, setSortIdx] = useState(2);
-  const [sortDir, setSortDir] = useState('d');
 
   function initStats() {
     fetch('MyFlightLog.csv')
@@ -81,41 +75,10 @@ function App() {
             data.sort((a: any, b: any) => (a.DATE < b.DATE ? 1 : -1));
             setStats(stats);
             setData(data);
-            setFilteredData(data);
           },
           error: (error: any) => console.error('Error parsing CSV:', error),
         });
       });
-  }
-
-  function formatDuration(duration: string, setColor = false): string {
-    duration = duration.replace('H', 'H ').toLowerCase();
-    if (setColor) {
-      duration = `<span style="color:${parseInt(duration) <= 0 ? 'green' : 'red'}">${duration.replace('-', '')}</span>`;
-    }
-    return duration;
-  }
-
-  function onFilterChange(event: any) {
-    const value = event.target.value;
-    setFilterText(value);
-    if (value.length > 0) {
-      setFilteredData(data.filter((d) => JSON.stringify(d).toLowerCase().includes(value.toLowerCase())));
-    } else {
-      setFilteredData(data);
-    }
-  }
-
-  function onTableSort(colIdx: number, colKey: string) {
-    const dir = sortDir === 'a' ? 'd' : 'a';
-    const sortedData = filteredData.sort((a, b) => (a[colKey] < b[colKey] ? -1 : 1));
-    setSortIdx(colIdx);
-    setSortDir(dir);
-    setFilteredData(dir === 'a' ? sortedData : sortedData.reverse());
-  }
-
-  function getSortIcon(colIdx: number): string {
-    return sortIdx === colIdx ? (sortDir === 'a' ? '↑' : '↓') : '';
   }
 
   useEffect(() => {
@@ -138,7 +101,7 @@ function App() {
         // sliding content slides horizontally with window scroll
         if (!ticking) {
           requestAnimationFrame(() => {
-            const slidingContent = document.querySelector('.sliding-content');
+            const slidingContent = document.getElementById('sliding-content');
             const xScrollPos = Math.min(window.scrollX, 1400 - window.innerWidth); // 1400 is table min-width on mobile
             slidingContent?.setAttribute('style', `transform: translateX(${xScrollPos}px)`);
             ticking = false;
@@ -151,252 +114,284 @@ function App() {
 
   return (
     <>
-      <div className="sliding-content">
-        <h1>🌐 My Flight Logbook</h1>
+      <h1>🌐 My Flight Logbook</h1>
 
-        <FlightMap />
+      <FlightMap />
 
-        <div id="data-overlay">
-          <dl className="stats countup">
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['numFlights']}>
-                  Flights
-                </Placeholder>
-              </dt>
-              <dd>
-                <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
-                  <CountUp end={stats['numFlights']} />
-                </Placeholder>
-              </dd>
-            </div>
-
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['distance']}>
-                  Distance
-                </Placeholder>
-              </dt>
-              <dd>
-                <Placeholder width={125} height={37} isReady={!!stats['distance']}>
-                  <CountUp end={stats['distance']} suffix=" mi" />
-                </Placeholder>
-              </dd>
-            </div>
-
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['flightTime']}>
-                  Flight Time
-                </Placeholder>
-              </dt>
-              <dd>
-                <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
-                  <CountUp end={parseInt(stats['flightTime']?.days)} suffix="d " />
-                  <CountUp end={parseInt(stats['flightTime']?.hours)} suffix="h" />
-                </Placeholder>
-              </dd>
-            </div>
-
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['delays']}>
-                  Delays
-                </Placeholder>
-              </dt>
-              <dd>
-                <Placeholder width={125} height={37} isReady={!!stats['delays']}>
-                  <CountUp end={parseInt(stats['delays']?.hours)} suffix="h " />
-                  <CountUp end={parseInt(stats['delays']?.minutes)} suffix="m" />
-                </Placeholder>
-              </dd>
-            </div>
-
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['airports']}>
-                  Airports
-                </Placeholder>
-              </dt>
-              <dd>
-                <Placeholder width={125} height={37} isReady={!!stats['airports']}>
-                  <CountUp end={stats['airports']?.length} />
-                </Placeholder>
-              </dd>
-            </div>
-
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['airlines']}>
-                  Airlines
-                </Placeholder>
-              </dt>
-              <dd>
-                <Placeholder width={125} height={37} isReady={!!stats['airlines']}>
-                  <CountUp end={stats['airlines']?.length} />
-                </Placeholder>
-              </dd>
-            </div>
-          </dl>
-
-          <dl className="stats charts">
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['airports']}>
-                  Top Airports
-                </Placeholder>
-              </dt>
-              <dd>
-                <ul>
-                  <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.airports}>
-                    {stats['airports']?.slice(0, 5).map((airport: any) => (
-                      <li key={airport[0]}>
-                        📍 {airport[0]} <InlineBarChart value={airport[1]} />
-                      </li>
-                    ))}
+      <div id="content">
+        <div id="sliding-content">
+          <div id="data-card">
+            <dl className="stats countup">
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['numFlights']}>
+                    Flights
                   </Placeholder>
-                </ul>
-              </dd>
-            </div>
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['airlines']}>
-                  Top Airlines
-                </Placeholder>
-              </dt>
-              <dd>
-                <ul>
-                  <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.airlines}>
-                    {stats['airlines']?.slice(0, 5).map((airline: any) => (
-                      <li key={airline[0]}>
-                        <img src={`airlines/${airline[0]}.png`} alt="" /> {airline[0]}{' '}
-                        <InlineBarChart value={airline[1]} />
-                      </li>
-                    ))}
+                </dt>
+                <dd>
+                  <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
+                    <CountUp end={stats['numFlights']} />
                   </Placeholder>
-                </ul>
-              </dd>
-            </div>
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['aircraft']}>
-                  Top Aircraft
-                </Placeholder>
-              </dt>
-              <dd>
-                <ul>
-                  <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.aircraft}>
-                    {stats['aircraft']?.slice(0, 5).map((aircraft: any) => (
-                      <li key={aircraft[0]}>
-                        ✈️ {aircraft[0]} <InlineBarChart value={aircraft[1]} />
-                      </li>
-                    ))}
+                </dd>
+              </div>
+
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['distance']}>
+                    Distance
                   </Placeholder>
-                </ul>
-              </dd>
-            </div>
-            <div className="item">
-              <dt>
-                <Placeholder width={50} height={14} isReady={!!stats['seatClasses']}>
-                  Top Seat Classes
-                </Placeholder>
-              </dt>
-              <dd>
-                <ul>
-                  <Placeholder width={250} height={108} isReady={!!stats.seatClasses}>
-                    <HighchartsReact
-                      highcharts={Highcharts}
-                      options={{
-                        chart: {
-                          type: 'pie',
-                          backgroundColor: 'transparent',
-                          height: 120,
-                          width: 120,
-                          margin: 0,
-                          spacing: 0,
-                        },
-                        title: null,
-                        subtitle: null,
-                        credits: { enabled: false },
-                        series: [
-                          {
-                            name: 'Flights',
-                            data: stats.seatClasses?.map((seatClass: any) => ({
-                              name: seatClass[0],
-                              y: seatClass[1],
-                              color:
-                                seatClass[0] === 'F'
-                                  ? '#7A36B1'
-                                  : seatClass[0] === 'P'
-                                  ? '#F13D65'
-                                  : seatClass[0] === 'E+'
-                                  ? '#FDAD0F'
-                                  : '#05BA48',
-                            })),
-                            innerSize: '60%',
-                            dataLabels: {
-                              enabled: false,
-                            },
-                            borderWidth: 0,
+                </dt>
+                <dd>
+                  <Placeholder width={125} height={37} isReady={!!stats['distance']}>
+                    <CountUp end={stats['distance']} suffix=" mi" />
+                  </Placeholder>
+                </dd>
+              </div>
+
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['flightTime']}>
+                    Flight Time
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
+                    <CountUp end={parseInt(stats['flightTime']?.days)} suffix="d " />
+                    <CountUp end={parseInt(stats['flightTime']?.hours)} suffix="h" />
+                  </Placeholder>
+                </dd>
+              </div>
+
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['delays']}>
+                    Delays
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <Placeholder width={125} height={37} isReady={!!stats['delays']}>
+                    <CountUp end={parseInt(stats['delays']?.hours)} suffix="h " />
+                    <CountUp end={parseInt(stats['delays']?.minutes)} suffix="m" />
+                  </Placeholder>
+                </dd>
+              </div>
+
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['airports']}>
+                    Airports
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <Placeholder width={125} height={37} isReady={!!stats['airports']}>
+                    <CountUp end={stats['airports']?.length} />
+                  </Placeholder>
+                </dd>
+              </div>
+
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['airlines']}>
+                    Airlines
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <Placeholder width={125} height={37} isReady={!!stats['airlines']}>
+                    <CountUp end={stats['airlines']?.length} />
+                  </Placeholder>
+                </dd>
+              </div>
+            </dl>
+
+            <dl className="stats charts">
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['airports']}>
+                    Top Airports
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <ul>
+                    <Placeholder width={300} height={12} marginBottom={12} numRows={5} isReady={!!stats.airports}>
+                      <Highchart
+                        options={{
+                          chart: {
+                            type: 'bar',
+                            backgroundColor: 'transparent',
+                            height: 120,
+                            width: 300,
+                            spacing: [0, 0, 0, 0],
                           },
-                        ],
-                      }}
-                    />
+                          xAxis: {
+                            title: { text: '' },
+                            categories: stats.airports?.slice(0, 5).map((airports: any) => `📍 ${airports[0]}`),
+                            labels: {
+                              enabled: true,
+                            },
+                            lineWidth: 0,
+                          },
+                          series: [
+                            {
+                              type: 'bar',
+                              name: 'Flights',
+                              data: stats.airports?.slice(0, 5).map((airports: any) => airports[1]),
+                              color: 'var(--bar-chart-color)',
+                              borderWidth: 0,
+                              dataLabels: { enabled: true },
+                            },
+                          ],
+                        }}
+                      />
+                    </Placeholder>
+                  </ul>
+                </dd>
+              </div>
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['airlines']}>
+                    Top Airlines
                   </Placeholder>
-                </ul>
-              </dd>
-            </div>
-          </dl>
+                </dt>
+                <dd>
+                  <ul>
+                    <Placeholder width={300} height={12} marginBottom={12} numRows={5} isReady={!!stats.airlines}>
+                      <Highchart
+                        options={{
+                          chart: {
+                            type: 'bar',
+                            backgroundColor: 'transparent',
+                            height: 120,
+                            width: 300,
+                            spacing: [0, 0, 0, 0],
+                          },
+                          xAxis: {
+                            title: { text: '' },
+                            categories: stats.airlines?.slice(0, 5).map((airline: any) => airline[0]),
+                            labels: {
+                              enabled: true,
+                              useHTML: true,
+                              formatter: function () {
+                                return `<img src="/airlines/${this.value}.png" alt="" /> ${this.value}`;
+                              },
+                            },
+                            lineWidth: 0,
+                          },
+                          series: [
+                            {
+                              type: 'bar',
+                              name: 'Flights',
+                              data: stats.airlines?.slice(0, 5).map((airline: any) => airline[1]),
+                              color: 'var(--bar-chart-color)',
+                              borderWidth: 0,
+                              dataLabels: { enabled: true },
+                            },
+                          ],
+                        }}
+                      />
+                    </Placeholder>
+                  </ul>
+                </dd>
+              </div>
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['aircraft']}>
+                    Top Aircraft
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <ul>
+                    <Placeholder width={300} height={12} marginBottom={12} numRows={5} isReady={!!stats.aircraft}>
+                      <Highchart
+                        options={{
+                          chart: {
+                            type: 'bar',
+                            backgroundColor: 'transparent',
+                            height: 120,
+                            width: 300,
+                            spacing: [0, 0, 0, 0],
+                          },
+                          xAxis: {
+                            title: { text: '' },
+                            categories: stats.aircraft?.slice(0, 5).map((aircraft: any) => `✈️ ${aircraft[0]}`),
+                            labels: {
+                              enabled: true,
+                            },
+                            lineWidth: 0,
+                          },
+                          series: [
+                            {
+                              type: 'bar',
+                              name: 'Flights',
+                              data: stats.aircraft?.slice(0, 5).map((aircraft: any) => aircraft[1]),
+                              color: 'var(--bar-chart-color)',
+                              borderWidth: 0,
+                              dataLabels: { enabled: true },
+                            },
+                          ],
+                        }}
+                      />
+                    </Placeholder>
+                  </ul>
+                </dd>
+              </div>
+              <div className="item">
+                <dt>
+                  <Placeholder width={50} height={14} isReady={!!stats['seatClasses']}>
+                    Top Seat Classes
+                  </Placeholder>
+                </dt>
+                <dd>
+                  <ul>
+                    <Placeholder width={300} height={108} marginBottom={12} isReady={!!stats.seatClasses}>
+                      <Highchart
+                        options={{
+                          chart: {
+                            type: 'pie',
+                            backgroundColor: 'transparent',
+                            height: 120,
+                            width: 120,
+                            margin: 0,
+                            spacing: [0, 0, 0, 0],
+                          },
+                          series: [
+                            {
+                              type: 'pie',
+                              name: 'Flights',
+                              data: stats.seatClasses?.map((seatClass: any) => ({
+                                name: seatClass[0],
+                                y: seatClass[1],
+                                color:
+                                  seatClass[0] === 'F'
+                                    ? '#7A36B1'
+                                    : seatClass[0] === 'P'
+                                    ? '#F13D65'
+                                    : seatClass[0] === 'E+'
+                                    ? '#FDAD0F'
+                                    : '#05BA48',
+                              })),
+                              innerSize: '60%',
+                              dataLabels: {
+                                enabled: true,
+                                crop: false,
+                                connectorWidth: 0,
+                                distance: -10,
+                                format: '{y}',
+                                style: { textOutline: 'none' },
+                              },
+                              borderWidth: 0,
+                            },
+                          ],
+                        }}
+                      />
+                    </Placeholder>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </div>
         </div>
+        <FlightTable data={data} />
       </div>
-
-      <input id="filter" type="text" placeholder="⌕ Filter" value={filterText} onChange={onFilterChange} />
-      <table id="flight-log">
-        <thead>
-          <tr>
-            <th onClick={() => onTableSort(0, 'AIRLINE_FLIGHT')}>Flight {getSortIcon(0)}</th>
-            <th onClick={() => onTableSort(1, 'ORIGIN_DEST')}>From ‣ To {getSortIcon(1)}</th>
-            <th onClick={() => onTableSort(2, 'DATE')}>Date {getSortIcon(2)}</th>
-            <th onClick={() => onTableSort(3, 'DEPART_MILLIS')}>Depart {getSortIcon(3)}</th>
-            <th onClick={() => onTableSort(4, 'ARRIVE_MILLIS')}>Arrive {getSortIcon(4)}</th>
-            <th onClick={() => onTableSort(5, 'TIME_MILLIS')}>Duration {getSortIcon(5)}</th>
-            <th onClick={() => onTableSort(6, 'DELAY_MILLIS')}>Delay {getSortIcon(6)}</th>
-            <th onClick={() => onTableSort(7, 'DISTANCE_NUM')}>Distance {getSortIcon(7)}</th>
-            <th onClick={() => onTableSort(8, 'TAIL')}>Aircraft {getSortIcon(8)}</th>
-            <th onClick={() => onTableSort(9, 'TYPE')}>Type {getSortIcon(9)}</th>
-            <th onClick={() => onTableSort(10, 'SEAT')}>Seat {getSortIcon(10)}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredData.map((flight) => (
-            <tr key={uuid()}>
-              <td>
-                <img className="airline" src={`airlines/${flight.AIRLINE}.png`} alt="" /> {flight.AIRLINE_FLIGHT}
-              </td>
-              <td>{flight.ORIGIN_DEST}</td>
-              <td>{flight.DATE}</td>
-              <td>{flight.DEPART}</td>
-              <td>{flight.ARRIVE}</td>
-              <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.TIME) }} />
-              <td dangerouslySetInnerHTML={{ __html: formatDuration(flight.DELAY, true) }} />
-              <td>{flight.DISTANCE_NUM} mi</td>
-              <td>
-                <a href={`https://www.flightradar24.com/data/aircraft/${flight.TAIL}`} target="_blank" rel="noreferrer">
-                  {flight.TAIL}
-                </a>
-              </td>
-              <td>{flight.TYPE}</td>
-              <td>
-                <div className="seats">
-                  <span className="seatNum">{flight.SEAT_NUM}</span>
-                  <span className={`badge badge-${flight.SEAT_CLASS}`}>{flight.SEAT_CLASS}</span>
-                  {flight.SEAT_POS && <img className="seatPos" src={`seats/${flight.SEAT_POS}.svg`} alt="" />}
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </>
   );
 }
