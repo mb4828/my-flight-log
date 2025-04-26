@@ -162,7 +162,7 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
-                    <div style={{ display: 'flex', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                    <div style={{ display: 'flex' }}>
                       <FlipNumbers
                         width={18}
                         height={22}
@@ -174,7 +174,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       &nbsp;
@@ -203,7 +203,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       &nbsp;mi
@@ -232,7 +232,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       d&nbsp;
@@ -247,7 +247,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       h
@@ -276,7 +276,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       h&nbsp;
@@ -291,7 +291,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       m
@@ -308,7 +308,7 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['airports']}>
-                    <div style={{ display: 'flex', fontWeight: '400' }}>
+                    <div style={{ display: 'flex' }}>
                       <FlipNumbers
                         width={18}
                         height={22}
@@ -320,7 +320,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       &nbsp;
@@ -337,7 +337,7 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['airlines']}>
-                    <div style={{ display: 'flex', fontWeight: '400' }}>
+                    <div style={{ display: 'flex' }}>
                       <FlipNumbers
                         width={18}
                         height={28}
@@ -349,7 +349,7 @@ function App() {
                         numberStyle={{
                           fontFamily: 'IBM Plex Sans, sans-serif',
                           fontSize: '1.75rem',
-                          fontWeight: '500',
+                          fontWeight: '400',
                         }}
                       />
                       &nbsp;
