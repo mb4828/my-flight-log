@@ -138,7 +138,7 @@ function App() {
     <>
       <h1>📔 My Flight Logbook</h1>
 
-      <FlightMap />
+      <FlightMap year={filterYear} />
 
       <div id="content">
         <div id="sliding-content">
