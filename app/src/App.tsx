@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import * as Luxon from 'luxon';
 import Papa from 'papaparse';
-import CountUp from 'react-countup';
+import FlipNumbers from 'react-flip-numbers';
 import FlightMap from './components/FlightMap';
 import FlightTable from './components/FlightTable';
 import Highchart from './components/Highchart';
@@ -153,7 +153,7 @@ function App() {
               ))}
             </ul>
 
-            <dl className="stats countup">
+            <dl className="stats numbers">
               <div className="item">
                 <dt>
                   <Placeholder width={50} height={14} isReady={!!stats['numFlights']}>
@@ -162,7 +162,23 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
-                    <CountUp end={stats['numFlights']} duration={1} preserveValue />
+                    <div style={{ display: 'flex', fontFamily: 'IBM Plex Sans, sans-serif' }}>
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + stats['numFlights']}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      &nbsp;
+                    </div>
                   </Placeholder>
                 </dd>
               </div>
@@ -175,7 +191,23 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['distance']}>
-                    <CountUp end={stats['distance']} duration={1} suffix=" mi" preserveValue />
+                    <div style={{ display: 'flex' }}>
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + stats['distance']}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      &nbsp;mi
+                    </div>
                   </Placeholder>
                 </dd>
               </div>
@@ -188,8 +220,38 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
-                    <CountUp end={parseInt(stats['flightTime']?.days)} duration={1} suffix="d " preserveValue />
-                    <CountUp end={parseInt(stats['flightTime']?.hours)} duration={1} suffix="h" preserveValue />
+                    <div style={{ display: 'flex' }}>
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + parseInt(stats['flightTime']?.days)}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      d&nbsp;
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + parseInt(stats['flightTime']?.hours)}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      h
+                    </div>
                   </Placeholder>
                 </dd>
               </div>
@@ -202,8 +264,38 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['delays']}>
-                    <CountUp end={parseInt(stats['delays']?.hours)} duration={1} suffix="h " preserveValue />
-                    <CountUp end={parseInt(stats['delays']?.minutes)} duration={1} suffix="m" preserveValue />
+                    <div style={{ display: 'flex' }}>
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + parseInt(stats['delays']?.hours)}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      h&nbsp;
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + parseInt(stats['delays']?.minutes)}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      m
+                    </div>
                   </Placeholder>
                 </dd>
               </div>
@@ -216,7 +308,23 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['airports']}>
-                    <CountUp end={stats['airports']?.length} />
+                    <div style={{ display: 'flex', fontWeight: '400' }}>
+                      <FlipNumbers
+                        width={18}
+                        height={22}
+                        numbers={'' + stats['airports']?.length}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      &nbsp;
+                    </div>
                   </Placeholder>
                 </dd>
               </div>
@@ -229,7 +337,23 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['airlines']}>
-                    <CountUp end={stats['airlines']?.length} />
+                    <div style={{ display: 'flex', fontWeight: '400' }}>
+                      <FlipNumbers
+                        width={18}
+                        height={28}
+                        numbers={'' + stats['airlines']?.length}
+                        color="var(--font-color)"
+                        background="transparent"
+                        play
+                        duration={1}
+                        numberStyle={{
+                          fontFamily: 'IBM Plex Sans, sans-serif',
+                          fontSize: '1.75rem',
+                          fontWeight: '500',
+                        }}
+                      />
+                      &nbsp;
+                    </div>
                   </Placeholder>
                 </dd>
               </div>

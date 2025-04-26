@@ -53,13 +53,19 @@ h1 {
       top: 2px;
     }
   }
-  .stats.countup dd {
-    font-size: 1.75rem;
+  .stats.numbers {
+    dd {
+      font-size: 1.75rem;
+      font-weight: 400;
+    }
+    .item {
+      min-width: 10%;
+    }
+    section {
+      justify-content: flex-start !important;
+    }
   }
-  .stats.countup .item {
-    min-width: 10%;
-  }
-  .stats.charts .item {
+  .stats.numbers .stats.charts .item {
     min-width: 24%;
   }
 }
@@ -107,7 +113,7 @@ h1 {
       gap: 24px;
     }
 
-    .stats.countup .item {
+    .stats.numbers .item {
       min-width: 42% !important;
     }
 
@@ -115,7 +121,7 @@ h1 {
       min-width: 100% !important;
     }
 
-    .countup {
+    .numbers {
       padding-bottom: 0;
     }
   }
