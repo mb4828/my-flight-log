@@ -9,7 +9,11 @@ import './FlightMap.scss';
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNsMnFweGpuYTAwNXAzY3Bob3lqaG9rMG4ifQ.O8yYprih5CDw3tH0bDrCHw';
 const IS_MOBILE = window.innerWidth < 768;
 
-const FlightMap = () => {
+interface FlightMapProps {
+  // year: number;
+}
+
+const FlightMap: React.FC<FlightMapProps> = () => {
   const [viewMode, setViewMode] = useState('mercator' as any);
   const [geoJson, setGeoJson] = useState(null as null | any);
   const [popup, setPopup] = useState(null as null | any);

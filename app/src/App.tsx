@@ -12,10 +12,12 @@ import './App.scss';
 let ticking = false;
 
 function App() {
-  const [stats, setStats] = useState({} as any);
   const [data, setData] = useState([] as any[]);
+  const [filteredData, setFilteredData] = useState([] as any[]);
+  const [filterYear, setFilterYear] = useState('All Time');
+  const [stats, setStats] = useState({} as any);
 
-  function initStats() {
+  function loadData() {
     fetch('MyFlightLog.csv')
       .then((response) => {
         if (!response.ok) {
@@ -41,49 +43,69 @@ function App() {
               d.SEAT_POS = d.SEAT.split('|')[2];
               return d;
             });
-            const stats = {
-              numFlights: data.length,
-              distance: data.map((d) => parseInt(d.DISTANCE) || 0).reduce((a, c) => a + c, 0),
-              flightTime: data
-                .map((d) => Luxon.Duration.fromISO(`PT${d.TIME}`))
-                .reduce((a, c) => a.plus(c))
-                .shiftTo('days', 'hours')
-                .toObject(),
-              delays: data
-                .map((d) =>
-                  d.DELAY.startsWith('-') ? Luxon.Duration.fromMillis(0) : Luxon.Duration.fromISO(`PT${d.DELAY}`)
-                )
-                .reduce((a, c) => a.plus(c))
-                .shiftTo('hours', 'minutes')
-                .toObject(),
-              airports: Object.entries(
-                data
-                  .map((d) => d.ORIGIN)
-                  .concat(data.map((d) => d.DESTINATION))
-                  .reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
-              ).sort((a: any, b: any) => b[1] - a[1]),
-              airlines: Object.entries(
-                data.map((d) => d.AIRLINE).reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
-              ).sort((a: any, b: any) => b[1] - a[1]),
-              aircraft: Object.entries(
-                data.map((d) => d.TYPE).reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
-              ).sort((a: any, b: any) => b[1] - a[1]),
-              seatClasses: Object.entries(
-                data.map((d) => d.SEAT_CLASS).reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
-              ).sort((a: any, b: any) => b[1] - a[1]),
-            };
             data.sort((a: any, b: any) => (a.DATE < b.DATE ? 1 : -1));
-            setStats(stats);
             setData(data);
+            setFilteredData(data);
           },
           error: (error: any) => console.error('Error parsing CSV:', error),
         });
       });
   }
 
-  useEffect(() => {
-    initStats();
+  function getYearList() {
+    const years = new Set(data.map((d) => d.DATE.split('-')[0]));
+    return ['All Time'].concat(Array.from(years).sort((a, b) => parseInt(b) - parseInt(a)));
+  }
 
+  useEffect(() => {
+    // generate stats
+    if (filteredData.length > 0) {
+      const stats = {
+        numFlights: filteredData.length,
+        distance: filteredData.map((d) => parseInt(d.DISTANCE) || 0).reduce((a, c) => a + c, 0),
+        flightTime: filteredData
+          .map((d) => Luxon.Duration.fromISO(`PT${d.TIME}`))
+          .reduce((a, c) => a.plus(c))
+          .shiftTo('days', 'hours')
+          .toObject(),
+        delays: filteredData
+          .map((d) => (d.DELAY.startsWith('-') ? Luxon.Duration.fromMillis(0) : Luxon.Duration.fromISO(`PT${d.DELAY}`)))
+          .reduce((a, c) => a.plus(c))
+          .shiftTo('hours', 'minutes')
+          .toObject(),
+        airports: Object.entries(
+          filteredData
+            .map((d) => d.ORIGIN)
+            .concat(filteredData.map((d) => d.DESTINATION))
+            .reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
+        ).sort((a: any, b: any) => b[1] - a[1]),
+        airlines: Object.entries(
+          filteredData.map((d) => d.AIRLINE).reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
+        ).sort((a: any, b: any) => b[1] - a[1]),
+        aircraft: Object.entries(
+          filteredData.map((d) => d.TYPE).reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
+        ).sort((a: any, b: any) => b[1] - a[1]),
+        seatClasses: Object.entries(
+          filteredData.map((d) => d.SEAT_CLASS).reduce((acc, item) => ((acc[item] = (acc[item] || 0) + 1), acc), {})
+        ).sort((a: any, b: any) => b[1] - a[1]),
+      };
+      setStats(stats);
+    }
+  }, [filteredData]);
+
+  useEffect(() => {
+    // filter data by year
+    if (filterYear === 'All Time') {
+      setFilteredData(data);
+    } else {
+      const filtered = data.filter((d) => d.DATE.split('-')[0] === filterYear);
+      setFilteredData(filtered);
+    }
+  }, [data, filterYear]);
+
+  useEffect(() => {
+    // load data and set up scroll event listener
+    loadData();
     window.addEventListener('scroll', () => {
       // if table is wider than screen width
       if (window.innerWidth <= 1400) {
@@ -114,13 +136,23 @@ function App() {
 
   return (
     <>
-      <h1>🌐 My Flight Logbook</h1>
+      <h1>📔 My Flight Logbook</h1>
 
       <FlightMap />
 
       <div id="content">
         <div id="sliding-content">
           <div id="data-card">
+            <ul className="nav">
+              {getYearList().map((year: any) => (
+                <li key={year}>
+                  <button onClick={() => setFilterYear(year)} className={filterYear === year ? 'active' : ''}>
+                    {year}
+                  </button>
+                </li>
+              ))}
+            </ul>
+
             <dl className="stats countup">
               <div className="item">
                 <dt>
@@ -130,7 +162,7 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['numFlights']}>
-                    <CountUp end={stats['numFlights']} />
+                    <CountUp end={stats['numFlights']} duration={1} preserveValue />
                   </Placeholder>
                 </dd>
               </div>
@@ -143,7 +175,7 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['distance']}>
-                    <CountUp end={stats['distance']} suffix=" mi" />
+                    <CountUp end={stats['distance']} duration={1} suffix=" mi" preserveValue />
                   </Placeholder>
                 </dd>
               </div>
@@ -156,8 +188,8 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['flightTime']}>
-                    <CountUp end={parseInt(stats['flightTime']?.days)} suffix="d " />
-                    <CountUp end={parseInt(stats['flightTime']?.hours)} suffix="h" />
+                    <CountUp end={parseInt(stats['flightTime']?.days)} duration={1} suffix="d " preserveValue />
+                    <CountUp end={parseInt(stats['flightTime']?.hours)} duration={1} suffix="h" preserveValue />
                   </Placeholder>
                 </dd>
               </div>
@@ -170,8 +202,8 @@ function App() {
                 </dt>
                 <dd>
                   <Placeholder width={125} height={37} isReady={!!stats['delays']}>
-                    <CountUp end={parseInt(stats['delays']?.hours)} suffix="h " />
-                    <CountUp end={parseInt(stats['delays']?.minutes)} suffix="m" />
+                    <CountUp end={parseInt(stats['delays']?.hours)} duration={1} suffix="h " preserveValue />
+                    <CountUp end={parseInt(stats['delays']?.minutes)} duration={1} suffix="m" preserveValue />
                   </Placeholder>
                 </dd>
               </div>
@@ -202,7 +234,6 @@ function App() {
                 </dd>
               </div>
             </dl>
-
             <dl className="stats charts">
               <div className="item">
                 <dt>
@@ -218,7 +249,7 @@ function App() {
                           chart: {
                             type: 'bar',
                             backgroundColor: 'transparent',
-                            height: 120,
+                            height: Math.min(120, stats.airports?.length * 24),
                             width: 250,
                             spacing: [0, 0, 0, 0],
                           },
@@ -237,6 +268,7 @@ function App() {
                               data: stats.airports?.slice(0, 5).map((airports: any) => airports[1]),
                               color: 'var(--bar-chart-color)',
                               borderWidth: 0,
+                              pointWidth: 12,
                               dataLabels: { enabled: true },
                             },
                           ],
@@ -260,7 +292,7 @@ function App() {
                           chart: {
                             type: 'bar',
                             backgroundColor: 'transparent',
-                            height: 120,
+                            height: Math.min(120, stats.airlines?.length * 24),
                             width: 250,
                             spacing: [0, 0, 0, 0],
                           },
@@ -283,6 +315,7 @@ function App() {
                               data: stats.airlines?.slice(0, 5).map((airline: any) => airline[1]),
                               color: 'var(--bar-chart-color)',
                               borderWidth: 0,
+                              pointWidth: 12,
                               dataLabels: { enabled: true },
                             },
                           ],
@@ -306,7 +339,7 @@ function App() {
                           chart: {
                             type: 'bar',
                             backgroundColor: 'transparent',
-                            height: 120,
+                            height: Math.min(120, stats.aircraft?.length * 24),
                             width: 250,
                             spacing: [0, 0, 0, 0],
                           },
@@ -325,6 +358,7 @@ function App() {
                               data: stats.aircraft?.slice(0, 5).map((aircraft: any) => aircraft[1]),
                               color: 'var(--bar-chart-color)',
                               borderWidth: 0,
+                              pointWidth: 12,
                               dataLabels: { enabled: true },
                             },
                           ],
@@ -369,7 +403,7 @@ function App() {
                                     ? '#FDAD0F'
                                     : '#05BA48',
                               })),
-                              innerSize: '60%',
+                              innerSize: '65%',
                               dataLabels: {
                                 enabled: true,
                                 crop: false,
@@ -390,7 +424,7 @@ function App() {
             </dl>
           </div>
         </div>
-        <FlightTable data={data} />
+        <FlightTable data={filteredData} />
       </div>
     </>
   );
