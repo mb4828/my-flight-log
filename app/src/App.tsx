@@ -212,14 +212,14 @@ function App() {
                 </dt>
                 <dd>
                   <ul>
-                    <Placeholder width={300} height={12} marginBottom={12} numRows={5} isReady={!!stats.airports}>
+                    <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.airports}>
                       <Highchart
                         options={{
                           chart: {
                             type: 'bar',
                             backgroundColor: 'transparent',
                             height: 120,
-                            width: 300,
+                            width: 250,
                             spacing: [0, 0, 0, 0],
                           },
                           xAxis: {
@@ -254,14 +254,14 @@ function App() {
                 </dt>
                 <dd>
                   <ul>
-                    <Placeholder width={300} height={12} marginBottom={12} numRows={5} isReady={!!stats.airlines}>
+                    <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.airlines}>
                       <Highchart
                         options={{
                           chart: {
                             type: 'bar',
                             backgroundColor: 'transparent',
                             height: 120,
-                            width: 300,
+                            width: 250,
                             spacing: [0, 0, 0, 0],
                           },
                           xAxis: {
@@ -300,14 +300,14 @@ function App() {
                 </dt>
                 <dd>
                   <ul>
-                    <Placeholder width={300} height={12} marginBottom={12} numRows={5} isReady={!!stats.aircraft}>
+                    <Placeholder width={250} height={12} marginBottom={12} numRows={5} isReady={!!stats.aircraft}>
                       <Highchart
                         options={{
                           chart: {
                             type: 'bar',
                             backgroundColor: 'transparent',
                             height: 120,
-                            width: 300,
+                            width: 250,
                             spacing: [0, 0, 0, 0],
                           },
                           xAxis: {
@@ -342,7 +342,7 @@ function App() {
                 </dt>
                 <dd>
                   <ul>
-                    <Placeholder width={300} height={108} marginBottom={12} isReady={!!stats.seatClasses}>
+                    <Placeholder width={250} height={108} marginBottom={12} isReady={!!stats.seatClasses}>
                       <Highchart
                         options={{
                           chart: {
