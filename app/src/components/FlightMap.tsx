@@ -122,7 +122,7 @@ const FlightMap = () => {
         initialViewState={{
           longitude: -74.006,
           latitude: 40.7128,
-          zoom: !IS_MOBILE ? 2 : 0.4,
+          zoom: !IS_MOBILE ? 2 : 0.2,
         }}
         mapStyle="mapbox://styles/mapbox/outdoors-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
