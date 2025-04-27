@@ -75,7 +75,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
           [bounds[0], bounds[1]], // Southwest corner
           [bounds[2], bounds[3]], // Northeast corner
         ],
-        { padding: 250, maxZoom: 10, duration: 1000 }
+        { padding: window.innerWidth < 768 ? 100 : 250, duration: 1000 }
       );
 
       // fade in points
