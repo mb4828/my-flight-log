@@ -708,6 +708,20 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="589">
+            <LineStyle id="590">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="599">
+            <LineStyle id="600">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -1130,6 +1144,20 @@
                     <scale>0</scale>
                 </LabelStyle>
             </Style>
+            <Style id="593">
+                <IconStyle id="594">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="595">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="596">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
             <name>Airports</name>
             <Placemark id="8">
                 <name>EWR</name>
@@ -1339,6 +1367,13 @@
                 <styleUrl>#571</styleUrl>
                 <Point id="569">
                     <coordinates>25.479,36.400,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="592">
+                <name>BNA</name>
+                <styleUrl>#593</styleUrl>
+                <Point id="591">
+                    <coordinates>-86.678,36.124,0.0</coordinates>
                 </Point>
             </Placemark>
         </Folder>
@@ -3158,6 +3193,42 @@
             <styleUrl>#585</styleUrl>
             <LineString id="583">
                 <coordinates>2.550,49.013,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="588">
+            <name>EWR ‣ BNA [2025-09-26]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA3544&lt;/b&gt; - 2025-09-26&lt;br&gt;
+            NEWARK to NASHVILLE
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 6:29PM&lt;br&gt;
+            🛬 NASHVILLE INTERNATIONAL - 7:55PM&lt;br&gt;
+            ⏱️ 2H26M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
+            ✈️ N729YX (E75W)
+        </description>
+            <styleUrl>#589</styleUrl>
+            <LineString id="587">
+                <coordinates>-74.169,40.692,0.0 -86.678,36.124,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="598">
+            <name>BNA ‣ EWR [2025-09-29]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA3442&lt;/b&gt; - 2025-09-29&lt;br&gt;
+            NASHVILLE to NEWARK
+            &lt;hr&gt;
+            🛫 NASHVILLE INTERNATIONAL - 11:42AM&lt;br&gt;
+            🛬 NEWARK LIBERTY INTERNATIONAL - 3:31PM&lt;br&gt;
+            ⏱️ 2H49M&lt;br&gt;
+            🌎 745MI&lt;br&gt;
+            ✈️ N751YX (E75W)
+        </description>
+            <styleUrl>#599</styleUrl>
+            <LineString id="597">
+                <coordinates>-86.678,36.124,0.0 -74.169,40.692,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
