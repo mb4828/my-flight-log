@@ -722,6 +722,20 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="603">
+            <LineStyle id="604">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="607">
+            <LineStyle id="608">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -3229,6 +3243,42 @@
             <styleUrl>#599</styleUrl>
             <LineString id="597">
                 <coordinates>-86.678,36.124,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="602">
+            <name>EWR ‣ PHX [2025-12-18]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA556&lt;/b&gt; - 2025-12-18&lt;br&gt;
+            NEWARK to PHOENIX
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 7:01PM&lt;br&gt;
+            🛬 PHOENIX SKY HARBOR INTERNATIONAL - 10:30PM&lt;br&gt;
+            ⏱️ 5H29M&lt;br&gt;
+            🌎 2127MI&lt;br&gt;
+            ✈️ N77590 (B39M)
+        </description>
+            <styleUrl>#603</styleUrl>
+            <LineString id="601">
+                <coordinates>-74.169,40.692,0.0 -112.008,33.434,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="606">
+            <name>PHX ‣ EWR [2025-12-31]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_UA_15_15_s.png&quot;&gt;
+            &lt;b&gt;UA1219&lt;/b&gt; - 2025-12-31&lt;br&gt;
+            PHOENIX to NEWARK
+            &lt;hr&gt;
+            🛫 PHOENIX SKY HARBOR INTERNATIONAL - 8:44AM&lt;br&gt;
+            🛬 NEWARK LIBERTY INTERNATIONAL - 3:26PM&lt;br&gt;
+            ⏱️ 4H42M&lt;br&gt;
+            🌎 2127MI&lt;br&gt;
+            ✈️ N69840 (B739)
+        </description>
+            <styleUrl>#607</styleUrl>
+            <LineString id="605">
+                <coordinates>-112.008,33.434,0.0 -74.169,40.692,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
