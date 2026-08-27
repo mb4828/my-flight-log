@@ -7,7 +7,7 @@ import bbox from '@turf/bbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './FlightMap.scss';
 
-const MAPBOX_TOKEN = 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNsMnFweGpuYTAwNXAzY3Bob3lqaG9rMG4ifQ.O8yYprih5CDw3tH0bDrCHw';
+const MAPBOX_TOKEN = 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNtb2s0ZW10NjA1ZmYycG9ucXhqdTM1Mm4ifQ.NJxRhU1_TgeNLU1fDhNdTg';
 
 interface FlightMapProps {
   year: string;
