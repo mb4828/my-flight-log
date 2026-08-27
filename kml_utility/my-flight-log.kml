@@ -736,6 +736,41 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="611">
+            <LineStyle id="612">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="621">
+            <LineStyle id="622">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="637">
+            <LineStyle id="638">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="647">
+            <LineStyle id="648">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="657">
+            <LineStyle id="658">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -1172,6 +1207,76 @@
                     <scale>0</scale>
                 </LabelStyle>
             </Style>
+            <Style id="615">
+                <IconStyle id="616">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="617">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="618">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="625">
+                <IconStyle id="626">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="627">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="628">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="631">
+                <IconStyle id="632">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="633">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="634">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="641">
+                <IconStyle id="642">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="643">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="644">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
+            <Style id="651">
+                <IconStyle id="652">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="653">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="654">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
             <name>Airports</name>
             <Placemark id="8">
                 <name>EWR</name>
@@ -1388,6 +1493,41 @@
                 <styleUrl>#593</styleUrl>
                 <Point id="591">
                     <coordinates>-86.678,36.124,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="614">
+                <name>OSL</name>
+                <styleUrl>#615</styleUrl>
+                <Point id="613">
+                    <coordinates>11.100,60.194,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="624">
+                <name>BGO</name>
+                <styleUrl>#625</styleUrl>
+                <Point id="623">
+                    <coordinates>5.218,60.293,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="630">
+                <name>CPH</name>
+                <styleUrl>#631</styleUrl>
+                <Point id="629">
+                    <coordinates>12.656,55.618,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="640">
+                <name>HEL</name>
+                <styleUrl>#641</styleUrl>
+                <Point id="639">
+                    <coordinates>24.956,60.320,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="650">
+                <name>ARN</name>
+                <styleUrl>#651</styleUrl>
+                <Point id="649">
+                    <coordinates>17.919,59.652,0.0</coordinates>
                 </Point>
             </Placemark>
         </Folder>
@@ -3279,6 +3419,96 @@
             <styleUrl>#607</styleUrl>
             <LineString id="605">
                 <coordinates>-112.008,33.434,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="610">
+            <name>EWR ‣ OSL [2026-08-14]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_SK_15_15_s.png&quot;&gt;
+            &lt;b&gt;SK908&lt;/b&gt; - 2026-08-14&lt;br&gt;
+            NEWARK to OSLO
+            &lt;hr&gt;
+            🛫 NEWARK LIBERTY INTERNATIONAL - 5:42PM&lt;br&gt;
+            🛬 OSLO GARDERMOEN - 7:14AM&lt;br&gt;
+            ⏱️ 7H32M&lt;br&gt;
+            🌎 3687MI&lt;br&gt;
+            ✈️ SE-DMS (A21N)
+        </description>
+            <styleUrl>#611</styleUrl>
+            <LineString id="609">
+                <coordinates>-74.169,40.692,0.0 11.100,60.194,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="620">
+            <name>BGO ‣ CPH [2026-08-19]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_SK_15_15_s.png&quot;&gt;
+            &lt;b&gt;SK2865&lt;/b&gt; - 2026-08-19&lt;br&gt;
+            BERGEN to COPENHAGEN
+            &lt;hr&gt;
+            🛫 BERGEN FLESLAND - 10:20AM&lt;br&gt;
+            🛬 KASTRUP - 11:35AM&lt;br&gt;
+            ⏱️ 1H15M&lt;br&gt;
+            🌎 421MI&lt;br&gt;
+            ✈️ SE-DOZ (A20N)
+        </description>
+            <styleUrl>#621</styleUrl>
+            <LineString id="619">
+                <coordinates>5.218,60.293,0.0 12.656,55.618,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="636">
+            <name>CPH ‣ HEL [2026-08-21]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_SK_15_15_s.png&quot;&gt;
+            &lt;b&gt;SK1716&lt;/b&gt; - 2026-08-21&lt;br&gt;
+            COPENHAGEN to HELSINKI
+            &lt;hr&gt;
+            🛫 KASTRUP - 5:50PM&lt;br&gt;
+            🛬 HELSINKI VANTAA - 8:28PM&lt;br&gt;
+            ⏱️ 1H38M&lt;br&gt;
+            🌎 554MI&lt;br&gt;
+            ✈️ OY-JYF (B738)
+        </description>
+            <styleUrl>#637</styleUrl>
+            <LineString id="635">
+                <coordinates>12.656,55.618,0.0 24.956,60.320,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="646">
+            <name>HEL ‣ ARN [2026-08-23]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_SK_15_15_s.png&quot;&gt;
+            &lt;b&gt;SK725&lt;/b&gt; - 2026-08-23&lt;br&gt;
+            HELSINKI to STOCKHOLM
+            &lt;hr&gt;
+            🛫 HELSINKI VANTAA - 7:41PM&lt;br&gt;
+            🛬 ARLANDA - 7:55PM&lt;br&gt;
+            ⏱️ 1H14M&lt;br&gt;
+            🌎 247MI&lt;br&gt;
+            ✈️ SE-MKB (AT72)
+        </description>
+            <styleUrl>#647</styleUrl>
+            <LineString id="645">
+                <coordinates>24.956,60.320,0.0 17.919,59.652,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="656">
+            <name>ARN ‣ EWR [2026-08-26]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_SK_15_15_s.png&quot;&gt;
+            &lt;b&gt;SK903&lt;/b&gt; - 2026-08-26&lt;br&gt;
+            STOCKHOLM to NEWARK
+            &lt;hr&gt;
+            🛫 ARLANDA - 10:46AM&lt;br&gt;
+            🛬 NEWARK LIBERTY INTERNATIONAL - 12:55PM&lt;br&gt;
+            ⏱️ 8H9M&lt;br&gt;
+            🌎 3920MI&lt;br&gt;
+            ✈️ LN-RKU (A333)
+        </description>
+            <styleUrl>#657</styleUrl>
+            <LineString id="655">
+                <coordinates>17.919,59.652,0.0 -74.169,40.692,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
