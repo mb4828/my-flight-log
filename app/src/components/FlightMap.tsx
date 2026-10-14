@@ -7,7 +7,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import './FlightMap.scss';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNtb2s0ZW10NjA1ZmYycG9ucXhqdTM1Mm4ifQ.NJxRhU1_TgeNLU1fDhNdTg';
-const INITIAL_VIEW_STATE = { longitude: 0, latitude: 18.4, zoom: 1.5, bearing: 0, pitch: 0 };
+const INITIAL_VIEW_STATE = { longitude: 0, latitude: 0, zoom: 1.5, bearing: 0, pitch: 0 };
 
 interface FlightMapProps {
   year: string;
