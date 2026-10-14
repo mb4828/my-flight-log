@@ -11,6 +11,7 @@ const WORLD_BOUNDS: [[number, number], [number, number]] = [
   [-180, -85.051129],
   [180, 85.051129],
 ];
+const INITIAL_VIEW_STATE = { longitude: 0, latitude: 18.4, zoom: 1, bearing: 0, pitch: 0 };
 
 interface FlightMapProps {
   year: string;
@@ -18,7 +19,7 @@ interface FlightMapProps {
 
 const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
   const mapboxMap = useRef(null as any);
-  const [viewMode, setViewMode] = useState('mercator' as any);
+  const [viewMode, setViewMode] = useState('equalEarth' as any);
   const [geoJson, setGeoJson] = useState(null as null | any);
   const [popup, setPopup] = useState(null as null | any);
 
@@ -155,6 +156,17 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
   }, []);
 
   useEffect(() => {
+    if (viewMode === 'equalEarth') {
+      mapboxMap.current?.jumpTo({
+        center: [INITIAL_VIEW_STATE.longitude, INITIAL_VIEW_STATE.latitude],
+        zoom: INITIAL_VIEW_STATE.zoom,
+        bearing: INITIAL_VIEW_STATE.bearing,
+        pitch: INITIAL_VIEW_STATE.pitch,
+      });
+    }
+  }, [viewMode]);
+
+  useEffect(() => {
     // filter and redraw map when the year changes
     if (mapboxMap && mapboxMap.current) {
       // fade out points
@@ -171,7 +183,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
 
   return (
     <div id="flight-map">
-      <button className="view-button" onClick={() => setViewMode(viewMode === 'mercator' ? 'globe' : 'mercator')}>
+      <button className="view-button" onClick={() => setViewMode(viewMode === 'equalEarth' ? 'globe' : 'equalEarth')}>
         {viewMode === 'globe' ? '2D' : '3D'}
       </button>
 
@@ -179,7 +191,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
         mapStyle="mapbox://styles/mapbox/outdoors-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         projection={viewMode}
-        initialViewState={{ longitude: 0, latitude: 18.4, zoom: 1 }}
+        initialViewState={INITIAL_VIEW_STATE}
         maxBounds={WORLD_BOUNDS}
         renderWorldCopies={false}
         onLoad={onMapLoad}
