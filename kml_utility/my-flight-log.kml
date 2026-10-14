@@ -771,6 +771,27 @@
                 <width>4</width>
             </LineStyle>
         </Style>
+        <Style id="661">
+            <LineStyle id="662">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="671">
+            <LineStyle id="672">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
+        <Style id="675">
+            <LineStyle id="676">
+                <color>7FF5A195</color>
+                <colorMode>normal</colorMode>
+                <width>4</width>
+            </LineStyle>
+        </Style>
         <name>My Flight Log</name>
         <Folder id="2">
             <Style id="9">
@@ -1277,6 +1298,20 @@
                     <scale>0</scale>
                 </LabelStyle>
             </Style>
+            <Style id="665">
+                <IconStyle id="666">
+                    <colorMode>normal</colorMode>
+                    <scale>0.5</scale>
+                    <heading>0</heading>
+                    <Icon id="667">
+                        <href>https://maps.google.com/mapfiles/kml/paddle/blu-blank-lv.png</href>
+                    </Icon>
+                </IconStyle>
+                <LabelStyle id="668">
+                    <colorMode>normal</colorMode>
+                    <scale>0</scale>
+                </LabelStyle>
+            </Style>
             <name>Airports</name>
             <Placemark id="8">
                 <name>EWR</name>
@@ -1528,6 +1563,13 @@
                 <styleUrl>#651</styleUrl>
                 <Point id="649">
                     <coordinates>17.919,59.652,0.0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark id="664">
+                <name>HND</name>
+                <styleUrl>#665</styleUrl>
+                <Point id="663">
+                    <coordinates>139.779,35.552,0.0</coordinates>
                 </Point>
             </Placemark>
         </Folder>
@@ -3509,6 +3551,60 @@
             <styleUrl>#657</styleUrl>
             <LineString id="655">
                 <coordinates>17.919,59.652,0.0 -74.169,40.692,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="660">
+            <name>JFK ‣ HND [2026-09-26]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_NH_15_15_s.png&quot;&gt;
+            &lt;b&gt;NH159&lt;/b&gt; - 2026-09-26&lt;br&gt;
+            NEW YORK to TOKYO
+            &lt;hr&gt;
+            🛫 JOHN F KENNEDY INTERNATIONAL - 1:50AM&lt;br&gt;
+            🛬 TOKYO INTERNATIONAL - 4:27AM&lt;br&gt;
+            ⏱️ 13H37M&lt;br&gt;
+            🌎 6757MI&lt;br&gt;
+            ✈️ JA-787A (B773)
+        </description>
+            <styleUrl>#661</styleUrl>
+            <LineString id="659">
+                <coordinates>-73.779,40.640,0.0 139.779,35.552,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="670">
+            <name>HND ‣ HNL [2026-10-09]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_DL_15_15_s.png&quot;&gt;
+            &lt;b&gt;DL198&lt;/b&gt; - 2026-10-09&lt;br&gt;
+            TOKYO to HONOLULU
+            &lt;hr&gt;
+            🛫 TOKYO INTERNATIONAL - 9:47PM&lt;br&gt;
+            🛬 HONOLULU INTERNATIONAL - 10:10AM&lt;br&gt;
+            ⏱️ 7H23M&lt;br&gt;
+            🌎 3848MI&lt;br&gt;
+            ✈️ N191DN (B763)
+        </description>
+            <styleUrl>#671</styleUrl>
+            <LineString id="669">
+                <coordinates>139.779,35.552,0.0 -157.927,21.316,0.0</coordinates>
+            </LineString>
+        </Placemark>
+        <Placemark id="674">
+            <name>HNL ‣ JFK [2026-10-12]</name>
+            <description>
+            &lt;img src=&quot;https://content.airhex.com/content/logos/airlines_DL_15_15_s.png&quot;&gt;
+            &lt;b&gt;DL650&lt;/b&gt; - 2026-10-12&lt;br&gt;
+            HONOLULU to NEW YORK
+            &lt;hr&gt;
+            🛫 HONOLULU INTERNATIONAL - 3:41PM&lt;br&gt;
+            🛬 JOHN F KENNEDY INTERNATIONAL - 6:55AM&lt;br&gt;
+            ⏱️ 9H14M&lt;br&gt;
+            🌎 4974MI&lt;br&gt;
+            ✈️ N1200K (B763)
+        </description>
+            <styleUrl>#675</styleUrl>
+            <LineString id="673">
+                <coordinates>-157.927,21.316,0.0 -73.779,40.640,0.0</coordinates>
             </LineString>
         </Placemark>
     </Document>
