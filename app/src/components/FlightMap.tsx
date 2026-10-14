@@ -3,11 +3,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { Map, Popup } from 'react-map-gl';
 import { kml } from '@tmcw/togeojson';
 import greatCircle from '@turf/great-circle';
-import bbox from '@turf/bbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './FlightMap.scss';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNtb2s0ZW10NjA1ZmYycG9ucXhqdTM1Mm4ifQ.NJxRhU1_TgeNLU1fDhNdTg';
+const WORLD_BOUNDS: [[number, number], [number, number]] = [
+  [-180, -85.051129],
+  [180, 85.051129],
+];
 
 interface FlightMapProps {
   year: string;
@@ -36,18 +39,26 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
         };
       } else if (feature.geometry.type === 'LineString') {
         const coords = feature.geometry.coordinates;
-        const segments = [];
+        const paths = [];
 
         for (let i = 0; i < coords.length - 1; i++) {
           const start = coords[i];
           const end = coords[i + 1];
           const gc = greatCircle(start, end, { npoints: 100 });
-          segments.push(gc);
+          // Turf splits a great-circle route at the antimeridian, returning a
+          // MultiLineString. Keep those paths separate so Mapbox can draw
+          // each side of the map edge correctly.
+          if (gc.geometry.type === 'MultiLineString') {
+            paths.push(...gc.geometry.coordinates);
+          } else {
+            paths.push(gc.geometry.coordinates);
+          }
         }
 
-        feature.geometry.coordinates = segments.reduce((acc: any, segment: any) => {
-          return acc.concat(segment.geometry.coordinates);
-        }, []);
+        feature.geometry =
+          paths.length === 1
+            ? { type: 'LineString', coordinates: paths[0] }
+            : { type: 'MultiLineString', coordinates: paths };
       }
       return feature;
     });
@@ -66,22 +77,10 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
     return { ...geoJson, features: [...points, ...lines] };
   }, [geoJson, year]);
 
-  function animateMap(geoJsonData: any) {
-    if (geoJsonData.features.length > 0) {
-      // update map zoom so everything fits
-      const bounds = bbox(geoJsonData);
-      mapboxMap.current.fitBounds(
-        [
-          [bounds[0], bounds[1]], // Southwest corner
-          [bounds[2], bounds[3]], // Northeast corner
-        ],
-        { padding: window.innerWidth < 768 ? 100 : 250, duration: 1000 }
-      );
-
-      // fade in points
-      mapboxMap.current.setPaintProperty('pushpins', 'icon-opacity', 1);
-      mapboxMap.current.setPaintProperty('routes', 'line-opacity', 0.8);
-    }
+  function animateMap() {
+    // fade in points
+    mapboxMap.current.setPaintProperty('pushpins', 'icon-opacity', 1);
+    mapboxMap.current.setPaintProperty('routes', 'line-opacity', 0.8);
   }
 
   function onMapLoad(event: any) {
@@ -131,7 +130,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
         maxzoom: 24,
       });
 
-      animateMap(geoJson);
+      animateMap();
     });
   }
 
@@ -164,7 +163,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
       setTimeout(() => {
         const filteredGeoJson = filterGeoJsonByYear();
         mapboxMap.current.getSource('geojson')?.setData(filteredGeoJson);
-        animateMap(filteredGeoJson);
+        animateMap();
       }, 500);
     }
   }, [year, geoJson, filterGeoJsonByYear]);
@@ -179,6 +178,9 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
         mapStyle="mapbox://styles/mapbox/outdoors-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         projection={viewMode}
+        initialViewState={{ longitude: 0, latitude: 0, zoom: 1 }}
+        maxBounds={WORLD_BOUNDS}
+        renderWorldCopies={false}
         onLoad={onMapLoad}
         onClick={onMapClick}
       >
