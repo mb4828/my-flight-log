@@ -70,7 +70,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
 
     const lines = geoJson.features.filter((f: any) => f.properties.name?.includes(`[${year}`));
     const airports = Array.from(
-      new Set(lines.flatMap((line: any) => [line.properties.name?.slice(0, 3), line.properties.name?.slice(6, 9)]))
+      new Set(lines.flatMap((line: any) => [line.properties.name?.slice(0, 3), line.properties.name?.slice(6, 9)])),
     );
     const points = geoJson.features.filter((f: any) => airports.includes(f.properties?.title));
 
@@ -116,6 +116,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
         id: 'pushpins',
         type: 'symbol',
         source: 'geojson',
+        filter: ['==', '$type', 'Point'],
         layout: {
           'icon-image': 'pushpin',
           'icon-size': 0.3,
@@ -178,7 +179,7 @@ const FlightMap: React.FC<FlightMapProps> = ({ year }) => {
         mapStyle="mapbox://styles/mapbox/outdoors-v12"
         mapboxAccessToken={MAPBOX_TOKEN}
         projection={viewMode}
-        initialViewState={{ longitude: 0, latitude: 0, zoom: 1 }}
+        initialViewState={{ longitude: 0, latitude: 18.4, zoom: 1 }}
         maxBounds={WORLD_BOUNDS}
         renderWorldCopies={false}
         onLoad={onMapLoad}
